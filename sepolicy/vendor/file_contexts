@@ -36,3 +36,6 @@
 
 # Vibrator
 /sys/devices/virtual/timed_output/vibrator/vmax_mv            u:object_r:sysfs_vibrator:s0
+
+# Power
+/vendor/bin/hw/android\.hardware\.power@1\.2-service\.jason-libperfmgr u:object_r:hal_power_default_exec:s0
