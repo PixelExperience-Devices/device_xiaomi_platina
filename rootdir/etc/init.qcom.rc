@@ -233,9 +233,6 @@ on boot
     chown system system /sys/class/leds/led:switch_1/brightness
     chown system system /sys/class/leds/flashlight/brightness
 
-    # Create directory used for display
-    mkdir /persist/display 0770 system graphics
-
     # Create vpp directory
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
