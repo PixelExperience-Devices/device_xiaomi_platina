@@ -287,16 +287,10 @@ case "$target" in
         esac
         ;;
     "msm8953")
-        cap_ver = 1
-                if [ -e "/sys/devices/platform/soc/1d00000.qcom,vidc/capability_version" ]; then
-                    cap_ver=`cat /sys/devices/platform/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
-                else
-                    cap_ver=`cat /sys/devices/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
-                fi
-
-                if [ $cap_ver -eq 1 ]; then
-                    setprop media.msm8953.version 1
-                fi
+        cap_ver=`cat /sys/devices/soc/1d00000.qcom,vidc/capability_version` 2> /dev/null
+        if [ $cap_ver -eq 1 ]; then
+            setprop media.msm8953.version 1
+        fi
         ;;
     "msm8952")
       case "$soc_hwid" in
@@ -517,17 +511,3 @@ if [ -f /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies ]; then
     gpu_freq=`cat /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies` 2> /dev/null
     setprop ro.gpu.available_frequencies "$gpu_freq"
 fi
-
-# set prop for fingerprint identification
-hw_id=`cat /sys/devices/platform/HardwareInfo/hw_id`
-hw_device=`echo $hw_id | sed -ne 's/^\([^_]*\)_\([^_]*\)_\([^_]*\).*/\3/p'`
-case "$hw_device" in
-    "D9" | "NULL" )
-        setprop persist.sys.fp.vendor none
-        setprop ro.board.variant d9
-        ;;
-    "D9P" )
-        setprop persist.sys.fp.vendor fpc
-        setprop ro.board.variant d9p
-        ;;
-esac

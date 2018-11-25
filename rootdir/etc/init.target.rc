@@ -27,12 +27,16 @@
 #
 #
 
+import init.offline.log.rc
+import init.mishow.ctl.rc
+
 on early-init
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
     mkdir /dsp 0771 media media
 
 on init
+    mkdir /dev/logfs 0771 shell shell
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
     write /dev/stune/schedtune.colocate 0
@@ -40,55 +44,100 @@ on init
     write /dev/stune/system-background/schedtune.colocate 0
     write /dev/stune/foreground/schedtune.colocate 0
     write /dev/stune/top-app/schedtune.colocate 1
+# DBMDX character device
+    chown media media /dev/dbmdx-1
+    chmod 0770 /dev/dbmdx-1
+
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
+    mount vfat /dev/block/bootdevice/by-name/logfs /dev/logfs noatime umask=006,uid=2000,gid=2000
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
     # results in failure to launch late-start class.
 
-    #wait /dev/block/bootdevice/by-name/persist
-    #mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime barrier=1
-    #mkdir /persist/data 0700 system system
-    #mkdir /persist/bms 0700 root system
-    #restorecon_recursive /persist
-    write /sys/kernel/boot_adsp/boot 1
-
-on post-fs
+    mkdir /persist/data 0700 system system
+    mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
-    exec - root root -- /vendor/bin/init.huaqin.persist.sh
+    write /sys/kernel/boot_adsp/boot 1
+    mkdir /persist/wlan_bt 0700 system system
+    mkdir /persist/audio 0755 system system
+    chown system system /dev/tiload_node
+    chmod 660 /dev/tiload_node
+    chown system system /dev/tfa98xx_reg
+    chmod 660 /dev/tfa98xx_reg
+    chown system system /dev/tfa98xx_rw
+    chmod 660 /dev/tfa98xx_rw
+    chown system system /dev/tfa98xx_profile
+    chmod 660 /dev/tfa98xx_profile
+    mkdir /persist/subsys 0700 system system
+    chown root system /d/tp_debug/grip_area
+on property:sys.tp.grip_enable=90
+	write /d/tp_debug/grip_area 90
+on property:sys.tp.grip_enable=270
+	write /d/tp_debug/grip_area 270
+on property:sys.tp.grip_enable=0
+	write /d/tp_debug/grip_area 0
+on property:sys.tp.grip_enable=1
+	write /d/tp_debug/grip_area 1
+on property:sys.tp.grip_enable=180
+	write /d/tp_debug/grip_area 180
+on post-fs
     start qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh
     write /dev/ipa 1
-    # Update dm-verity state and set partition.*.verified properties
-    verity_update_state
+
+on post-fs
+    # We chown/chmod /cust again so because mount is run as root + defaults
+    chown system system /cust
+    chmod 0771 /cust
+    # We restorecon /cust in case the cust partition has been reset.
+    restorecon_recursive /cust
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /cust/lost+found 0770 root root
+
+on init
+    mkdir /cust 0771 system system
 
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on post-fs-data
+    mkdir /data/local/diag 2770 system log
     mkdir /data/tombstones/modem 0771 system system
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
     mkdir /data/vendor/hbtp 0750 system system
-    mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/misc/tloc 0700 system drmrpc
-    mkdir /persist/data 0700 system system
-    mkdir /persist/bms 0700 root system
+
     mkdir /data/thermal 0771 system system
     mkdir /data/thermal/config 0771 system system
-    chmod 0664 /sys/class/thermal/thermal_message/sconfig
-    chown system system /sys/class/thermal/thermal_message/sconfig
-#wangtao 20180227 add battery permission
-    chmod 0644 /sys/class/power_supply/battery/charging_enabled
-    chmod 0644 /sys/class/power_supply/battery/constant_charge_current_max
-    restorecon_recursive /persist
+    mkdir /data/misc/touch 0771 root system
+
+    mkdir /data/voicetrigger 0755 system system
+    mkdir /data/charge_logger 0771 system system
+
+# add charge_logger service for dump charge message
+service charge_logger /vendor/bin/charge_logger
+    class last_start
+    user system
+    group system system wakelock
+    disabled
+    oneshot
+
+on property:sys.boot_completed=1
+    start charge_logger
+    chmod 0644 /dev/fscklogs/log
+
+on property:ro.boot.dp=0x0
+    write /sys/bus/platform/devices/800f000.qcom,spmi:qcom,pm660@0:qcom,power-on@800/pshold_reboot 7
 
 on boot
     start rmt_storage
@@ -115,26 +164,13 @@ on boot
     chown system system /persist/speccfg/vendor_persist.prop
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
-    # wangtao open led permisions start
-    chown system system /sys/class/leds/red/blink
-    # wangtao open led permisions end
-    # wendell-20180423 added for fpc fingerprint
-    chown system system /sys/devices/soc/soc:fpc1020/compatible_all
-    chmod 0664 /sys/devices/soc/soc:fpc1020/compatible_all
-    chown system system /sys/devices/soc/soc:fpc1020/irq
-    chmod 0660 /sys/devices/soc/soc:fpc1020/irq
-    chown system system /sys/devices/soc/soc:fpc1020/hw_reset
-    chmod 0660 /sys/devices/platform/soc/soc:fpc1020/hw_reset
-    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
-    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
-    #MIUI Patch modified for ZQL6019-4 by penghoubing@huaqin.com
-    chown system system /sys/devices/soc/soc:fpc1020/fingerdown_wait
-    chmod 0660 /sys/devices/soc/soc:fpc1020/fingerdown_wait
+    chown system system /proc/tp_selftest
+    chown system system /sys/devices/virtual/graphics/fb0/msm_fb_dispparam
+    chown system system /sys/class/thermal/thermal_message/sconfig
 
-    # wendell-20180423 end
-    start getpersistlog
-    # Wifi firmware reload path
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
+#Load WLAN driver
+   insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
+   setprop wlan.driver.status "ok"
 
 #Peripheral manager
 service per_mgr /system/vendor/bin/pm-service
@@ -152,7 +188,7 @@ service per_proxy /system/vendor/bin/pm-proxy
 on property:init.svc.per_mgr=running
     start per_proxy
 
-on property:sys.powerctl=*
+on property:sys.shutdown.requested=*
     stop per_proxy
 
 #start camera server as daemon
@@ -172,7 +208,6 @@ on property:sys.powerctl=*
 #on property:persist.usb.chgdisabled=0
 #    write /sys/class/power_supply/battery/charging_enabled 1
 #
-
 #service qrngd /system/bin/qrngd -f
 #   class main
 #   user root
@@ -202,7 +237,7 @@ service qseecomd /vendor/bin/qseecomd
 #   group system
 #   disabled
 #
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermal-engine /system/vendor/bin/thermal-engine -T
    class main
    user root
    socket thermal-send-client stream 0666 system system
@@ -371,106 +406,19 @@ service mdtpd /system/vendor/bin/mdtpd
     user root
     group system radio drmrpc
 
-service gsort /system/bin/gsort
-    user root
-    disabled
-    oneshot
-    seclabel u:r:smartpa:s0
-on property:sys.gsort=1
-    start gsort
-
-service gsorttest /system/bin/gsorttest.sh
-    user root
-    disabled
-    oneshot
-    seclabel u:r:smartpa:s0
-on property:sys.gsortcheck=1
-    start gsorttest
-
-# hq log start
-service  getaplog /system/bin/getlog -c
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopaplog /system/bin/getlog -s
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getaplog=1
-    restart getaplog
-on property:persist.sys.debug.getaplog=0
-    start stopaplog
-
-service  getqxdmlog /system/bin/getlog -q
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopqxdmlog /system/bin/getlog -x
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getqxdmlog=1
-    restart getqxdmlog
-on property:persist.sys.debug.getqxdmlog=0
-    start stopqxdmlog
-
-service  cpanrlog  /system/bin/sh /system/etc/cpanrlog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  cptomblog  /system/bin/sh /system/etc/cptomblog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-service  gettcpdumplog /system/bin/getlog -t
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stoptcpdumplog /system/bin/getlog -p
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  getpersistlog /system/bin/getpersistlog
-    class main
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:sys.boot_completed=1
-    start getpersistlog
-on property:persist.sys.debug.gettcpdump=1
-    restart gettcpdumplog
-on property:persist.sys.debug.gettcpdump=0
-    start stoptcpdumplog
-
-service getalllog /system/bin/sh /system/etc/getalllog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-on property:persist.sys.debug.getalllog=1
-    restart getalllog
-on property:persist.sys.debug.getalllog=0
-    stop getalllog
-# hq log end
-
 service pd_mapper /system/vendor/bin/pd-mapper
      class core
+
+service mmbn-daemon /vendor/bin/mmbn-daemon
+    class main
+    disabled
+    oneshot
+
+service checknv /vendor/bin/checknv
+    class late_start
+    user root
+    oneshot
+    seclabel u:r:recovery:s0
 
 #
 ## QCA1530 SoC late_start group trigger
@@ -504,6 +452,32 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start vendor.imsrcsservice
 
+service iozonelog /system/vendor/bin/sh /system/bin/iozonelog.sh
+    class core
+    user root
+    oneshot
+
+on property:persist.sys.iozonelog=true
+	start iozonelog
+
+on property:persist.sys.iozonelog=false
+	stop iozonelog
+
+service qmesalog /system/vendor/bin/sh /system/bin/qmesa.sh
+    class core
+    user root
+    oneshot
+
+on property:persist.sys.qmesalog=true
+	start qmesalog
+
+on property:persist.sys.qmesalog=false
+	stop qmesalog
+
+service panel-info-sh /system/vendor/bin/sh /vendor/etc/init.panel_info.sh
+    class core
+    user root
+    oneshot
 
 service ppd /system/vendor/bin/mm-pp-dpps
     class late_start
@@ -511,6 +485,21 @@ service ppd /system/vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+service displayfeature /system/bin/displayfeature
+    class late_start
+    user root
+    group root
+
+service touch_count_dump /vendor/bin/touch_count_dump
+    class late_start
+    user root
+    group root
+
+service display_count /vendor/bin/display_count
+    class late_start
+    user root
+    group root
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
@@ -531,13 +520,30 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    load_system_props
-    start qcom-post-boot
+    #load_system_props
+    #start qcom-post-boot
+    write /sys/module/lpm_levels/parameters/sleep_disabled 0
+    #write /sys/module/lpm_levels/system/system-pc/idle_enabled 0
+    write /sys/devices/system/cpu/cpu0/online 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 633600
+    write /sys/devices/system/cpu/cpu1/online 1
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "userspace"
+    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 633600
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu6/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
+    mkdir /data/charge_logger 0771 system system
+    start poweroffm64
     start hvdcp_opti
-    setprop sys.usb.configfs 1
     start power_off_alarm
-    # hq log
-    setprop debug.charger.on 1
+    setprop sys.usb.configfs 1
+    mount tmpfs tmpfs /data
+    start thermal-engine
 
 #
 #service nqs /system/bin/nqs
@@ -558,21 +564,33 @@ on charger
 #    user system
 #    group system
 
+#minidump service
+service minidump64 /vendor/bin/minidump64
+    class late_start
+    oneshot
+    seclabel u:r:minidump64:s0
+
+#poweroff monitor service
+service poweroffm64 /vendor/bin/poweroffm64
+    class late_start
+    oneshot
+    seclabel u:r:poweroffm64:s0
+
 service seempd /system/bin/seempd
     class late_start
     user system
     group system sdcard_rw
     socket seempdw dgram 0666 system system
 
-service qfp-daemon /vendor/bin/qfp-daemon
-    class late_start
-    user system
-    group system drmrpc diag input
+#service qfp-daemon /vendor/bin/qfp-daemon
+#    class late_start
+#    user system
+#    group system drmrpc diag input
 
-service tlocd /system/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc
+#service tlocd /system/bin/tloc_daemon
+#    class late_start
+#    user system
+#    group drmrpc
 
 service hvdcp_opti /system/vendor/bin/hvdcp_opti
      class main
@@ -584,26 +602,20 @@ service smcinvoked /system/bin/smcinvoked
    user system
    group system
 
-# Add for ZQL5018-103 by Sven to set max charge current
-on property:sys.incall=true
-    write /sys/class/power_supply/battery/constant_charge_current_max 500000
-
-on property:sys.incall=false
-    write /sys/class/power_supply/battery/constant_charge_current_max 2000000
-
-#add for displayfeature
-service openad /system/vendor/bin/displayf_bin s 1
+service nv_mac /vendor/bin/nv_mac
+    class main
     user root
+    group net_raw
+    oneshot
+
+service audioshell_service /vendor/bin/audioshell_service
     oneshot
     disabled
 
-on property:sys.hq.ad=1
-    start openad
+on property:ro.miui.region=*
+    start audioshell_service
 
-service closead /system/vendor/bin/displayf_bin s 0
-    user root
-    oneshot
-    disabled
-
-on property:sys.hq.ad=0
-    start closead
+service remosaic_daemon /system/vendor/bin/remosaic_daemon
+    class late_start
+    user camera
+    group camera

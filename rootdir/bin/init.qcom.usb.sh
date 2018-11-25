@@ -110,10 +110,10 @@ fi
 # Allow USB enumeration with default PID/VID
 #
 baseband=`getprop ro.baseband`
-debuggable=`getprop ro.debuggable`
 
 echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 usb_config=`getprop persist.sys.usb.config`
+debuggable=`getprop ro.debuggable`
 case "$usb_config" in
     "" | "adb" | "none") #USB persist config not set, select default configuration
       case "$esoc_link" in
@@ -130,16 +130,18 @@ case "$usb_config" in
 	          "Dragon" | "SBC")
 	              setprop persist.sys.usb.config diag,adb
 	          ;;
+	          "CARBON" | "NITROGEN" | "JASON" | "PLATINA")
+	              if [ -z "$debuggable" -o "$debuggable" = "1"  ]; then
+	                  setprop persist.sys.usb.config adb
+	              else
+	                  setprop persist.sys.usb.config none
+	              fi
+	          ;;
                   *)
 		  soc_machine=${soc_machine:0:3}
 		  case "$soc_machine" in
 		    "SDA")
-	              # setprop persist.sys.usb.config diag,adb
-                      if [ -z "$debuggable" -o "$debuggable" = "1" ]; then
-                          setprop persist.sys.usb.config adb
-                      else
-                          setprop persist.sys.usb.config none
-                      fi
+	              setprop persist.sys.usb.config diag,adb
 		    ;;
 		    *)
 	            case "$target" in
@@ -157,15 +159,15 @@ case "$usb_config" in
 		      ;;
 	              "msm8937")
 			      if [ -d /config/usb_gadget ]; then
-				      setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
+				      setprop persist.sys.usb.config diag,adb
 			      else
 				      case "$soc_id" in
 					"313" | "320")
 				            setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
-				        ;;
-				        *)
+				      ;;
+				      *)
 				            setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
-				        ;;
+				      ;;
 				      esac
 			      fi
 		      ;;
@@ -180,12 +182,7 @@ case "$usb_config" in
 			      fi
 		      ;;
 	              "msm8998" | "sdm660" | "apq8098_latv")
-		          # setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
-                          if [ -z "$debuggable" -o "$debuggable" = "1" ]; then
-                              setprop persist.sys.usb.config adb
-                          else
-                              setprop persist.sys.usb.config none
-                          fi
+		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
 		      ;;
 	              "sdm845")
 		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
@@ -209,24 +206,21 @@ esac
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
 	# set USB controller's device node
-	setprop sys.usb.rndis.func.name "rndis_bam"
-	setprop sys.usb.rmnet.func.name "rmnet_bam"
-	setprop sys.usb.rmnet.inst.name "rmnet"
-	setprop sys.usb.dpl.inst.name "dpl"
 	case "$target" in
 	"msm8937")
 		setprop sys.usb.controller "msm_hsusb"
-		setprop sys.usb.rndis.func.name "rndis"
-		setprop sys.usb.rmnet.inst.name "rmnet_bam_dmux"
-		setprop sys.usb.dpl.inst.name "dpl_bam_dmux"
 		;;
 	"msm8953")
 		setprop sys.usb.controller "7000000.dwc3"
+		setprop sys.usb.rndis.func.name "rndis_bam"
+		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
 		;;
 	"msm8996")
 		setprop sys.usb.controller "6a00000.dwc3"
+		setprop sys.usb.rndis.func.name "rndis_bam"
+		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
 		;;
@@ -237,6 +231,8 @@ if [ -d /config/usb_gadget ]; then
 		;;
 	"sdm660")
 		setprop sys.usb.controller "a800000.dwc3"
+		setprop sys.usb.rndis.func.name "rndis_bam"
+		setprop sys.usb.rmnet.func.name "rmnet_bam"
 		echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
 		;;
 	"sdm845")
@@ -247,13 +243,6 @@ if [ -d /config/usb_gadget ]; then
 	*)
 		;;
 	esac
-
-	# Chip-serial is used for unique MSM identification in Product string
-	msm_serial=`cat /sys/devices/soc0/serial_number`;
-	msm_serial_hex=`printf %08X $msm_serial`
-	machine_type=`cat /sys/devices/soc0/machine`
-	product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
-	echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
 
 	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
 	serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber` 2> /dev/null
@@ -394,7 +383,7 @@ fi
 # enable rps cpus on msm8937 target
 setprop sys.usb.rps_mask 0
 case "$soc_id" in
-	"294" | "295" | "353" | "354")
+	"294" | "295")
 		setprop sys.usb.rps_mask 40
 	;;
 esac

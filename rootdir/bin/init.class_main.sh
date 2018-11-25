@@ -36,10 +36,7 @@ datamode=`getprop persist.data.mode`
 
 case "$baseband" in
     "apq" | "sda" )
-#modify by gongpeicai for wifiOnly bug-start
-#    setprop ro.radio.noril yes
-    setprop ro.radio.noril true
-#modify by gongpeicai for wifiOnly bug-end
+    setprop ro.radio.noril yes
     stop ril-daemon
 esac
 
