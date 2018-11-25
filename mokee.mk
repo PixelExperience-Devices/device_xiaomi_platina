@@ -16,21 +16,19 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from platina device
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit some common Mokee stuff.
-$(call inherit-product, vendor/mk/config/common_full_tablet_wifionly.mk)
-$(call inherit-product, vendor/mk/config/telephony.mk)
+$(call inherit-product, vendor/mk/config/common_full_phone.mk)
 
 PRODUCT_NAME := mk_platina
 PRODUCT_BRAND := Xiaomi
-#PRODUCT_CHARACTERISTICS := tablet
 PRODUCT_DEVICE := platina
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := MI PAD 4
+PRODUCT_MODEL := MI 8 Lite
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
