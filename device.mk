@@ -21,7 +21,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/xiaomi/clover/clover-vendor.mk)
+$(call inherit-product, vendor/xiaomi/platina/platina-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -264,7 +264,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_clover
+    android.hardware.light@2.0-service.xiaomi_platina
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -350,7 +350,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_clover
+    librecovery_updater_platina
 
 # RIL
 PRODUCT_PACKAGES += \

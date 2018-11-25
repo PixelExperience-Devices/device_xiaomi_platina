@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=clover
+DEVICE=platina
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2018

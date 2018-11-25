@@ -1,7 +1,7 @@
 [
  {
-   "repository": "android_vendor_xiaomi_clover",
-   "target_path": "vendor/xiaomi/clover"
+   "repository": "android_vendor_xiaomi_platina",
+   "target_path": "vendor/xiaomi/platina"
  },
  {
    "repository": "android_kernel_xiaomi_clover",

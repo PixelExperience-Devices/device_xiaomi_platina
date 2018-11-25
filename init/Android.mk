@@ -24,7 +24,7 @@ LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
 LOCAL_CFLAGS := -Wall -DANDROID_TARGET=\"$(TARGET_BOARD_PLATFORM)\"
-LOCAL_SRC_FILES := init_clover.cpp
-LOCAL_MODULE := libinit_clover
+LOCAL_SRC_FILES := init_platina.cpp
+LOCAL_MODULE := libinit_platina
 
 include $(BUILD_STATIC_LIBRARY)

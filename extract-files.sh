@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE=clover
+DEVICE=platina
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks

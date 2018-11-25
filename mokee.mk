@@ -18,26 +18,26 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Inherit from clover device
-$(call inherit-product, device/xiaomi/clover/device.mk)
+# Inherit from platina device
+$(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit some common Mokee stuff.
 $(call inherit-product, vendor/mk/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, vendor/mk/config/telephony.mk)
 
-PRODUCT_NAME := mk_clover
+PRODUCT_NAME := mk_platina
 PRODUCT_BRAND := Xiaomi
-PRODUCT_CHARACTERISTICS := tablet
-PRODUCT_DEVICE := clover
+#PRODUCT_CHARACTERISTICS := tablet
+PRODUCT_DEVICE := platina
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := MI PAD 4
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE="clover" \
-    PRODUCT_NAME="clover" \
-    BUILD_FINGERPRINT="Xiaomi/clover/clover:8.1.0/OPM1.171019.019/V10.1.1.0.ODJCNFI:user/release-keys" \
-    PRIVATE_BUILD_DESC="clover-user 8.1.0 OPM1.171019.019 V10.1.1.0.ODJCNFI release-keys"
+    TARGET_DEVICE="platina" \
+    PRODUCT_NAME="platina" \
+    BUILD_FINGERPRINT="Xiaomi/platina/platina:8.1.0/OPM1.171019.019/V10.0.7.0.ODTCNFH:user/release-keys" \
+    PRIVATE_BUILD_DESC="platina-user 8.1.0 OPM1.171019.019 V10.0.7.0.ODTCNFH release-keys"
 
 TARGET_VENDOR := Xiaomi
