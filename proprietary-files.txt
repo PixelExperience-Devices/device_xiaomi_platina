@@ -14,6 +14,8 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 
 # ADSP modules
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
@@ -22,11 +24,13 @@ vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdirac-capiv2.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libedge_smooth_skel.so
+vendor/lib/rfsa/adsp/libexternal_dog_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_800h_skel.so
 vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libhvxMathVIO.so
 vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
@@ -278,6 +282,8 @@ vendor/lib/libvidhance_gyro.so
 vendor/lib/libvidhance.so
 vendor/lib/libXMFD_AgeGender.so
 vendor/lib/mibokeh_660_opencl.bin
+vendor/lib/libmegface.so
+vendor/lib/libMegviiFacepp-0.5.2.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libchromaflash.so
 vendor/lib64/libdualcameraddm.so
@@ -2157,16 +2163,16 @@ vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/permissions/com.fingerprints.extension.xml
 vendor/framework/com.fingerprints.extension.jar
 vendor/lib/hw/fingerprint.goodix.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+#vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib/vendor.goodix.hardware.fingerprintextension@1.0.so
 vendor/lib64/hw/fingerprint.fpc.so
 vendor/lib64/hw/fingerprint.goodix.so
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
-vendor/lib64/libqfp-service.so
+#vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.goodix.hardware.fingerprintextension@1.0.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+#vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 
 # Gatekeeper
@@ -2468,7 +2474,7 @@ vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib/vendor.qti.hardware.limits@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so
+#vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so
 vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
@@ -2482,7 +2488,7 @@ vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib64/vendor.qti.hardware.limits@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.wipower@1.0_vendor.so
+#vendor/lib64/vendor.qti.hardware.wipower@1.0_vendor.so
 
 # Peripheral manager
 vendor/bin/hal_proxy_daemon
@@ -2492,7 +2498,7 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
-#vendor/etc/calib.cfg
+vendor/etc/calib.cfg
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
@@ -2524,7 +2530,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
-vendor/lib/libUserAgent.so
+#vendor/lib/libUserAgent.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -2541,7 +2547,7 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
-vendor/lib64/libUserAgent.so
+#vendor/lib64/libUserAgent.so
 
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
@@ -2730,10 +2736,10 @@ vendor/etc/thermal-engine-sdm660-nolimits.conf
 vendor/etc/thermal-engine-sdm660-pubgmhd.conf
 vendor/etc/thermal-engine-sdm660-sgame.conf
 vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
+#-vendor/lib/libthermalclient.so
+#-vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
-vendor/lib64/libthermalfeature.so
+#vendor/lib64/libthermalfeature.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
@@ -2787,10 +2793,10 @@ vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
 
 # TUI
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-lib/vendor.qti.hardware.tui_comm@1.0.so
-lib64/vendor.qti.hardware.tui_comm@1.0.so
+#vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+#vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+#lib/vendor.qti.hardware.tui_comm@1.0.so
+#lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 

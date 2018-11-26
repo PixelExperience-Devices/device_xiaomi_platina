@@ -315,7 +315,7 @@ PRODUCT_PACKAGES += \
 # Prebuilt kernel
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/Image.gz-dtb:kernel
- # Prebuilt modules
+# Prebuilt modules
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/exfat.ko:system/lib/modules/exfat.ko \
     $(LOCAL_PATH)/prebuilt/qca_cld3/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3/qca_cld3_wlan.ko
