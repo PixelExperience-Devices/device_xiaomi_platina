@@ -17,8 +17,20 @@ ro.xiaomi.sar_fusion=true
 
 # idle timeout, non-idle switch to idle time
 sdm.idle_time=1100
+#
+# from device/xiaomi/sdm660_common/common_ro.prop
+#
+# For common ro override property
+#
+# from device/xiaomi/sdm660_common/system.prop
+#
+#
+# system.prop for sdm660
+#
 
+#rild.libpath=/system/lib/libreference-ril.so
 rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+#rild.libargs=-d /dev/smd0
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
@@ -174,9 +186,6 @@ persist.data.df.dev_name=rmnet_usb0
 # 2 or anything else is camera2
 persist.radio.VT_CAM_INTERFACE=2
 
-#add by Sven to close camera hal3
-persist.vendor.qti.telephony.vt_cam_interface=1
-
 #property to enable user to access Google WFD settings
 persist.debug.wfd.enable=1
 #Enable stm-events
@@ -201,7 +210,7 @@ persist.radio.atfwd.start=true
 persist.hwc.enable_vds=1
 
 #Increase cached app limit
-ro.vendor.qti.sys.fw.bg_apps_limit=60
+#ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 #Settings to enable sensors
 #Device Orientation sensor
@@ -228,7 +237,7 @@ persist.camera.hist.high=20
 persist.camera.hist.drc=1.2
 
 # Create zram disk
-ro.vendor.qti.config.zram=true
+#ro.vendor.qti.config.zram=true
 
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
@@ -250,8 +259,8 @@ ro.cutoff_voltage_mv=3400
 #sensor properties
 sys.autobrightness_optimize=true
 
-#Ultra sound support
-audio.chk.cal.us=0
+#adjust voice call volume steps
+ro.config.vc_call_vol_steps=11
 
 # enable b-services aging propagation
 ro.vendor.qti.sys.fw.bservice_enable=true
@@ -274,35 +283,12 @@ persist.radio.dynamic_sar=true
 #
 # ADDITIONAL_BUILD_PROPERTIES
 #
-ro.treble.enabled=true
+
 persist.vendor.radio.report_codec=1
 persist.vendor.radio.redir_party_num=1
+ro.treble.enabled=true
 keyguard.no_require_sim=true
 persist.radio.apm_sim_not_pwdn=1
-
-
-#Use specified acdb files, by elf.wang
-persist.audio.calfile0=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Bluetooth_cal.acdb
-persist.audio.calfile1=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_General_cal.acdb
-persist.audio.calfile2=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Global_cal.acdb
-persist.audio.calfile3=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Handset_cal.acdb
-persist.audio.calfile4=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Hdmi_cal.acdb
-persist.audio.calfile5=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Headset_cal.acdb
-persist.audio.calfile6=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_Speaker_cal.acdb
-persist.audio.calfile7=/vendor/etc/acdbdata/QRD/sdm660-snd-card-skush/QRD_SKUSH_workspaceFile.qwsp
-persist.audio.calfile8=/vendor/etc/acdbdata/adsp_avs_config.acdb
-
-#Add acdb files for D9P, by elf.wang
-persist.audio.calfile0D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Bluetooth_cal.acdb
-persist.audio.calfile1D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_General_cal.acdb
-persist.audio.calfile2D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Global_cal.acdb
-persist.audio.calfile3D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Handset_cal.acdb
-persist.audio.calfile4D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Hdmi_cal.acdb
-persist.audio.calfile5D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Headset_cal.acdb
-persist.audio.calfile6D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_Speaker_cal.acdb
-persist.audio.calfile7D9P=/vendor/etc/acdbdata/QRD/sdm660-snd-card-d9p/QRD_D9P_workspaceFile.qwsp
-persist.audio.calfile8D9P=/vendor/etc/acdbdata/adsp_avs_config.acdb
-
 #Add for Dirac by elf
 persist.dirac.acs.controller=qem
 persist.dirac.acs.ignore_error=1
@@ -319,6 +305,3 @@ persist.env.fastdorm.enabled=true
 # enable new autobrightness algo
 sys.autobrightness_optimize=true
 
-#add by shixiaoyou, 2018/04/02, set single SIM
-#Set the SIM model for DSDS. ssss - Single model, dsds - Dual model.
-persist.radio.multisim.config=ssss

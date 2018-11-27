@@ -3,6 +3,9 @@
 #
 persist.sys.job_delay=true
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf
+ro.cit.stablebuild=true
+persist.sys.labtest_flag=false
+ro.cit.nonrootbuild=true
 qemu.hw.mainkeys=0
 video.disable.ubwc=1
 dalvik.vm.heapgrowthlimit=256m
@@ -11,6 +14,7 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=512k
 dalvik.vm.heapmaxfree=8m
+ro.hardware.nfc_nci=nqx.default
 persist.radio.multisim.config=dsds
 persist.vendor.qcomsysd.enabled=1
 keyguard.no_require_sim=true
@@ -58,8 +62,14 @@ vendor.fm.a2dp.conc.disabled=true
 vendor.audio.noisy.broadcast.delay=600
 persist.vendor.audio.hifi.int_codec=true
 vendor.audio.offload.pstimeout.secs=3
-vendor.audio.adm.buffering.ms=6
+audio.adm.buffering.ms=6
 ro.audio.soundfx.usb=true
+ro.vendor.sensors.facing=false
+ro.vendor.sensors.cmc=false
+ro.vendor.sdk.sensors.gestures=false
+ro.wlan.vendor=qcom
+ro.wlan.chip=39xx
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 persist.audio.dirac.speaker=true
 persist.audio.speaker.dualmode=true
 persist.vendor.stapp.display=1
@@ -72,13 +82,9 @@ vendor.audio.soundtrigger.user.adsp.level=60
 vendor.audio.soundtrigger.training.level=50
 ro.hardware.fp.fpc=true
 ro.hardware.fp.goodix=true
-ro.vendor.sensors.facing=false
-ro.vendor.sensors.cmc=false
-ro.vendor.sdk.sensors.gestures=false
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 ro.colorpick_adjust=true
 ro.df.effect.conflict=1
-
+persist.df.extcolor.proc=0
 # Security patch level
 ro.vendor.build.security_patch=2018-10-01
 
