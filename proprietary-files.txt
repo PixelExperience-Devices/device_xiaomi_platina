@@ -286,8 +286,8 @@ vendor/lib/libmegface.so
 vendor/lib/libMegviiFacepp-0.5.2.so
 vendor/lib/libedge_smooth_hvx_stub.so
 vendor/lib/libicuuc.so
-vendor/lib/libskia
-vendor/lib/libminikin
+vendor/lib/libskia.so
+vendor/lib/libminikin.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libchromaflash.so
 vendor/lib64/libdualcameraddm.so
@@ -2710,6 +2710,8 @@ vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 
 # Sensors
+lib/sensors.hal.tof.so
+lib64/sensors.hal.tof.so
 vendor/bin/sensors.qcom
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.sdm660.so
@@ -2719,7 +2721,6 @@ vendor/lib/libsensor_cal.so
 vendor/lib/libsensor_test.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
-vendor/lib/sensors.hal.tof.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/sensors.sdm660.so
 vendor/lib64/hw/sensors.sda660.so
@@ -2730,7 +2731,6 @@ vendor/lib64/libsensor_cal.so
 vendor/lib64/libsensor_test.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
-vendor/lib64/sensors.hal.tof.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 
