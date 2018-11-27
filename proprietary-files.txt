@@ -2719,6 +2719,7 @@ vendor/lib/libsensor_cal.so
 vendor/lib/libsensor_test.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
+vendor/lib/sensors.hal.tof.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/sensors.sdm660.so
 vendor/lib64/hw/sensors.sda660.so
@@ -2729,6 +2730,7 @@ vendor/lib64/libsensor_cal.so
 vendor/lib64/libsensor_test.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
+vendor/lib64/sensors.hal.tof.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 
