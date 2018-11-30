@@ -168,10 +168,6 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb0/msm_fb_dispparam
     chown system system /sys/class/thermal/thermal_message/sconfig
 
-#Load WLAN driver
-   insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
-   setprop wlan.driver.status "ok"
-
 #Peripheral manager
 service per_mgr /system/vendor/bin/pm-service
     class core

@@ -298,6 +298,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
+    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -311,14 +312,6 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
-
-# Prebuilt kernel
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/Image.gz-dtb:kernel
-# Prebuilt modules
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/exfat.ko:system/lib/modules/exfat.ko \
-    $(LOCAL_PATH)/prebuilt/qca_cld3/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3/qca_cld3_wlan.ko
 
 
 # Public Libraries
