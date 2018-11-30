@@ -40,6 +40,15 @@ $(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
 
+MSADP_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/msadp
+$(MSADP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MSADP link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /dev/block/bootdevice/by-name/msadp $(dir $@)
+
+ALL_DEFAULT_INSTALLED_MODULES += $(MSADP_SYMLINKS)
+
 RFS_APQ_GNSS_SYMLINKS := $(TARGET_OUT_VENDOR)/rfs/apq/gnss/
 $(RFS_APQ_GNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Creating RFS APQ GNSS folder structure: $@"
