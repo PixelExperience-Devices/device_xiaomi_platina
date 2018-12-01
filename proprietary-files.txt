@@ -61,6 +61,7 @@ lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 
 # Audio
 vendor/bin/audioflacapp
+vendor/bin/capture_audio.sh
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
@@ -121,11 +122,9 @@ vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
-vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
 # Camera
 bin/mm-qcamera-daemon
@@ -2165,17 +2164,28 @@ vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/etc/permissions/com.fingerprints.extension.xml
 vendor/framework/com.fingerprints.extension.jar
 vendor/lib/hw/fingerprint.goodix.so
-#vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib/vendor.goodix.hardware.fingerprintextension@1.0.so
 vendor/lib64/hw/fingerprint.fpc.so
 vendor/lib64/hw/fingerprint.goodix.so
 vendor/lib64/com.fingerprints.extension@1.0.so
 vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
-#vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.goodix.hardware.fingerprintextension@1.0.so
-#vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
+# FM
+bin/fmconfig
+lib/libfm-hci.so
+lib/fm_helium.so
+lib64/libfm-hci.so
+lib64/fm_helium.so
+vendor/bin/ftmdaemon
+vendor/bin/fm_qsoc_patches
+-lib/vendor.qti.hardware.fm@1.0.so
+-lib64/vendor.qti.hardware.fm@1.0.so
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -2476,7 +2486,6 @@ vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib/vendor.qti.hardware.limits@1.0_vendor.so
-#vendor/lib/vendor.qti.hardware.wipower@1.0_vendor.so
 vendor/lib64/libfeedbackhandler.so
 vendor/lib64/libperfgluelayer.so
 vendor/lib64/libqti-perfd-client.so
@@ -2490,7 +2499,6 @@ vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.iop@2.0_vendor.so
 vendor/lib64/vendor.qti.hardware.limits@1.0_vendor.so
-#vendor/lib64/vendor.qti.hardware.wipower@1.0_vendor.so
 
 # Peripheral manager
 vendor/bin/hal_proxy_daemon
@@ -2500,7 +2508,6 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
-etc/modem/Diag.cfg
 vendor/etc/calib.cfg
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
@@ -2514,7 +2521,7 @@ vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
 
 # QMI
 vendor/bin/irsc_util
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_libpermissions.xml
 etc/permissions/qti_permissions.xml
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
@@ -2533,7 +2540,6 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
-#vendor/lib/libUserAgent.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -2550,9 +2556,9 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
-#vendor/lib64/libUserAgent.so
 
 # Radio
+etc/modem/Diag.cfg
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
 -app/QtiSystemService/QtiSystemService.apk
@@ -2570,6 +2576,7 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
+framework/qti-telephony-common.jar|4ebf6571b783b3e2fa9a0ca5457fd2f3b5c01162
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
@@ -2695,7 +2702,7 @@ lib/vendor.qti.imsrtpservice@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
-vendor/lib64/lib-rtpcommon.so
+vendor/lib64/lib-rtpcomm on.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -2708,8 +2715,6 @@ vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 
 # Sensors
-lib/sensors.hal.tof.so
-lib64/sensors.hal.tof.so
 vendor/bin/sensors.qcom
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.sdm660.so
@@ -2718,8 +2723,6 @@ vendor/lib/libsensor1.so
 vendor/lib/sensors.ssc.so
 vendor/lib/sensor_calibrate.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
-vendor/lib64/hw/sensors.sdm660.so
-vendor/lib64/hw/sensors.sda660.so
 vendor/lib64/hw/activity_recognition.sdm660.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
@@ -2744,7 +2747,6 @@ vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
-#vendor/lib64/libthermalfeature.so
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
@@ -2779,7 +2781,7 @@ vendor/etc/hbtp/qtc801s.bin
 vendor/lib/libfastrpc_utf_stub.so
 vendor/lib/libhbtpclient.so
 vendor/lib/libhbtpfrmwk.so
-vendor/lib/libhbtpdsp.so
+vendor/lib/libhbtp dsp.so
 vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
 vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
@@ -2798,10 +2800,6 @@ vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
 vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
 
 # TUI
-#vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-#vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-#lib/vendor.qti.hardware.tui_comm@1.0.so
-#lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
