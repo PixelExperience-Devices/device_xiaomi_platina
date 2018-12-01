@@ -168,6 +168,9 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb0/msm_fb_dispparam
     chown system system /sys/class/thermal/thermal_message/sconfig
 
+#Load WLAN driver
+   chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 #Peripheral manager
 service per_mgr /system/vendor/bin/pm-service
     class core
