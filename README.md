@@ -1,25 +1,25 @@
 Copyright 2018 - The Mokee Project
 
-The MI PAD 4 (codenamed _"clover"_) are high-end mid-range tablet from Xiaomi.
+mko-mr1 device tree for Xiaomi MI 8 Lite
 
-Xiaomi MI PAD 4 was announced and released in June 2018.
+Xiaomi Mi MI 8 Lite was announced and released in Sep 2018.
 
 ## Device specifications
 
-| Device       | Xiaomi MI PAD 4                         |
-| -----------: | :---------------------------------------------- |
-| SoC          | Qualcomm SDM660 Snapdragon 660                  |
-| CPU          | 8x Qualcomm® Kryo™ 260 up to 2.2GHz             |
-| GPU          | Adreno 512                                      |
-| Memory       | 3GB / 4GM RAM (LPDDR4X)                         |
-| Shipped Android version | 8.1.0                              |
-| Storage      | 64GB eMMC 5.1 flash storage                     |
-| Battery      | Non-removable Li-Po 6000 mAh                    |
-| Dimensions   | 200.2 x 120.3 x 7.9 mm                          |
-| Display      | 1920 x 1200 (16:10), 8.0 inch                   |
-| Rear camera | 13MP, f/2.0 1080p 30 fps video|
-| Front camera | 5MP, f/2.0|
+| Device       | Xiaomi Mi 8 Lite                                    |
+| -----------: | :-------------------------------------------------- |
+| SoC          | Qualcomm SDM660 Snapdragon 660                      |
+| CPU          | 4x2.2 GHz Kryo 260 & 4x1.8 GHz Kryo	      	     |
+| GPU          | Adreno 512                                          |
+| Memory       | 4 GB RAM or 6 GB RAM (LPDDR4X)                      |
+| Android      | 8.1                                      	     |
+| Storage      | 128GB, 64GB emmc 5.1 flash storage  		     |
+| Battery      | Non-removable Li-Po 3350 mAh                  	     |
+| Dimensions   | 156.4 x 75.8 x 7.5 mm                               |
+| Display      | 2280 x 1080 (19:9), 6.26 inch                       |
+| Rear camera 1| 12MP, f/1.9 Dual LED flash                          |
+| Front camera | 24MP, 4 in 1, 1.8µm  		 		     |
 
 ## Device picture
 
-![Xiaomi MI PAD 4](http://i8.mifile.cn/a1/pms_1529843020.73617168!560x560.jpg)
+![Xiaomi Mi 8 Lite ](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543643214959&di=3b0c81b537ff2e742079764e8cf1aead&imgtype=0&src=http%3A%2F%2Fask-fd.zol-img.com.cn%2Fg5%2FM00%2F01%2F07%2FChMkJlv2fVaIcCdUAAA_3fbzsx8AAtT_wBUBrgAAD_1288.jpg)
