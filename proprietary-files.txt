@@ -61,7 +61,7 @@ lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 
 # Audio
 vendor/bin/audioflacapp
-vendor/bin/capture_audio.sh
+vendor/bin/capture.sh
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
@@ -2702,7 +2702,7 @@ lib/vendor.qti.imsrtpservice@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
-vendor/lib64/lib-rtpcomm on.so
+vendor/lib64/lib-rtpcommon.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -2781,7 +2781,7 @@ vendor/etc/hbtp/qtc801s.bin
 vendor/lib/libfastrpc_utf_stub.so
 vendor/lib/libhbtpclient.so
 vendor/lib/libhbtpfrmwk.so
-vendor/lib/libhbtp dsp.so
+vendor/lib/libhbtpdsp.so
 vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
 vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
