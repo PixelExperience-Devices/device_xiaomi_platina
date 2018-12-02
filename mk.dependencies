@@ -4,8 +4,8 @@
    "target_path": "vendor/xiaomi/platina"
  },
  {
-   "repository": "android_kernel_xiaomi_clover",
-   "target_path": "kernel/xiaomi/clover"
+   "repository": "android_kernel_xiaomi_platina",
+   "target_path": "kernel/xiaomi/platina"
  },
  {
     "repository": "android_packages_resources_devicesettings",
