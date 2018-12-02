@@ -53,8 +53,16 @@ persist.radio.multisim.config=dsds
 #set uim type
 ril.subscription.types=RUIM
 
+#
+# PROPERTIES FOR IMS
+#
+persist.dbg.ims_volte_enable=1
+persist.radio.videopause.mode=1
+persist.data.iwlan.enable=true
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
 persist.radio.VT_HYBRID_ENABLE=1
-persist.rcs.supported=0
+#persist.rcs.supported=0
 
 #iwaln vowifi corresponding
 persist.data.iwlan.enable=true

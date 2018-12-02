@@ -175,7 +175,8 @@ PRODUCT_PACKAGES += \
     memtrack.sdm660
 
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service
+    android.hardware.configstore@1.0-service \
+    android.hardware.broadcastradio@1.0-impl
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -381,10 +382,6 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full
-
-PRODUCT_PACKAGES += \
-    rild \
-    CarrierConfig
 
 # Seccomp
 PRODUCT_COPY_FILES += \
