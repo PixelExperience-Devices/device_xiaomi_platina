@@ -2015,6 +2015,9 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/etc/qdcm_calib_data_boe_fhd_video_dsi_panel.xml
 vendor/etc/qdcm_calib_data_csot_fhd_video_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_fhd_video_dsi_panel.xml
+vendor/etc/boe_fhd_video_dsi_panel_mi.xml
+vendor/etc/csot_fhd_video_dsi_panel_mi.xml
+vendor/etc/tianma_fhd_video_dsi_panel_mi.xml
 vendor/lib/libsdm-color.so
 vendor/lib/libsdm-diag.so
 vendor/lib/libsdmextension.so
