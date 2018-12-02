@@ -154,8 +154,7 @@ PRODUCT_PACKAGES += \
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
-    com.quicinc.cne \
-    services-ext
+    com.quicinc.cne
 
 # Display
 PRODUCT_PACKAGES += \
@@ -309,7 +308,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libmm-omxcore \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
@@ -400,7 +398,6 @@ PRODUCT_PACKAGES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    ims-ext-common \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
