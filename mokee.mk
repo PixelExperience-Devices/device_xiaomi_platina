@@ -35,7 +35,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="platina" \
     PRODUCT_NAME="platina" \
-    BUILD_FINGERPRINT="Xiaomi/platina/platina:8.1.0/OPM1.171019.019/V10.0.7.0.ODTCNFH:user/release-keys" \
-    PRIVATE_BUILD_DESC="platina-user 8.1.0 OPM1.171019.019 V10.0.7.0.ODTCNFH release-keys"
+    BUILD_FINGERPRINT="Xiaomi/platina/platina:8.1.0/OPM1.171019.019/8.11.29:user/release-keys" \
+    PRIVATE_BUILD_DESC="platina-user 8.1.0 OPM1.171019.019 8.11.29 release-keys"
 
 TARGET_VENDOR := Xiaomi
