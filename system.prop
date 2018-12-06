@@ -306,7 +306,7 @@ ro.audio.soundfx.dirac=true
 #Disable NRSM function
 persist.dpm.feature=1
 
-ro.sf.lcd_density=440
+ro.sf.lcd_density=403
 
 #enable fastdormancy
 persist.env.fastdorm.enabled=true
