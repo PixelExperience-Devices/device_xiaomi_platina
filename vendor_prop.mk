@@ -189,7 +189,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Set AudioFlinger client heap size
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.af.client_heap_size_kbyte=7168
+    ro.af.client_heap_size_kbyte=7168 \
+    vendor.audio_hal.in_period_size=144 \
+    vendor.audio_hal.period_multiplier=3 \
+    vendor.audio.adm.buffering.ms=
+
 
 # System prop for RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
