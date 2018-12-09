@@ -27,9 +27,6 @@
 #
 #
 
-import init.offline.log.rc
-import init.mishow.ctl.rc
-
 on early-init
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
