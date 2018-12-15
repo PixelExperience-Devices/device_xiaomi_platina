@@ -322,9 +322,6 @@ case "$panel_vendor" in
     "R")
         setprop sys.panel.vendor VITALINK
         ;;
-    "S")
-        setprop sys.panel.vendor CSOT
-        ;;
     *)
         setprop sys.panel.vendor UNKNOWN
         ;;
@@ -359,9 +356,6 @@ case "$panel_display" in
         ;;
     "0")
         setprop sys.panel.display OFILM
-        ;;
-    "B")
-        setprop sys.panel.display CSOT
         ;;
     *)
         setprop sys.panel.display UNKNOWN
