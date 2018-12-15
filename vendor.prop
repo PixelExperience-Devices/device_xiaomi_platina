@@ -86,8 +86,6 @@ ro.hardware.fp.goodix=true
 ro.colorpick_adjust=true
 ro.df.effect.conflict=1
 persist.vendor.df.extcolor.proc=0
-# Security patch level
-ro.vendor.build.security_patch=2018-11-01
 
 # Maintainer
 ro.mk.maintainer=glory
