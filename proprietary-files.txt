@@ -46,8 +46,16 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # ANT+
-vendor/lib/com.qualcomm.qti.ant@1.0.so
-vendor/lib64/com.qualcomm.qti.ant@1.0.so
+lib/com.qualcomm.qti.ant@1.0.so
+-lib/libantradio.so
+lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
+
+# ANT+ (vendor)
+vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
+vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # AptX - from Nokia 7 Plus Onyx_00WW-user 9 PPR1.180610.011 00WW_3_22C release-keys
 vendor/lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
@@ -2020,7 +2028,6 @@ vendor/lib/libFIDOKeyProvisioning.so
 vendor/lib64/libFIDOKeyProvisioning.so
 
 # Fingerprint sensor
-lib64/libsoftkeymaster.so:vendor/lib64/libsoftkeymaster.so
 -vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/qfp-daemon
