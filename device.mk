@@ -88,7 +88,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@4.0-impl:32 \
     android.hardware.soundtrigger@2.1-impl:32 \
     audio.a2dp.default \
-    audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -170,8 +169,7 @@ PRODUCT_PACKAGES += \
     memtrack.sdm660
 
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.0-service \
-    android.hardware.broadcastradio@1.0-impl
+    android.hardware.configstore@1.0-service
 
 # Doze
 PRODUCT_PACKAGES += \
@@ -197,10 +195,6 @@ PRODUCT_COPY_FILES += \
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
-# Gatekeeper HAL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -265,10 +259,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
-# Keymaster HAL
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
