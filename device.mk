@@ -307,7 +307,7 @@ PRODUCT_PACKAGES += \
 
  # Prebuilt modules
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/exfat.ko:system/lib/modules/exfat.ko \
+    $(LOCAL_PATH)/prebuilt/exfat.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/exfat.ko \
     $(LOCAL_PATH)/prebuilt/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3_wlan.ko
 
 
