@@ -23,6 +23,9 @@
 
 $(call inherit-product, vendor/xiaomi/platina/platina-vendor.mk)
 
+# Properties
+-include $(LOCAL_PATH)/vendor_prop.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -310,7 +313,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/exfat.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/exfat.ko \
     $(LOCAL_PATH)/prebuilt/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3_wlan.ko
-
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
