@@ -591,3 +591,9 @@ service nv_mac /vendor/bin/nv_mac
     user system
     group system inet net_admin wifi net_raw
     oneshot
+
+service copy_macaddress-sh /vendor/bin/sh /vendor/bin/init.copy_macaddress.sh
+    class main
+    user root
+    group root system
+    oneshot
