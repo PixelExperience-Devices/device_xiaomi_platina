@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2018 The LineageOS Project
+* Copyright (C) 2018 The Mokee Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package org.lineageos.device;
+package org.mokee.device;
 
 import android.os.Bundle;
 import android.os.SystemProperties;
