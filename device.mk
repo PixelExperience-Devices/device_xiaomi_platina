@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
+# Charger
+PRODUCT_PACKAGES += \
+    init.leds.sh
+
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -312,6 +316,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Panel
+PRODUCT_PACKAGES += \
+    init.panel_info.sh
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
@@ -351,8 +359,6 @@ PRODUCT_PACKAGES += \
     init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sensors.sh \
-    init.panel_info.sh \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
@@ -394,6 +400,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl:64 \
     android.hardware.sensors@1.0-service
+
+PRODUCT_PACKAGES += \
+    init.qcom.sensors.sh
 
 # Telephony
 PRODUCT_PACKAGES += \

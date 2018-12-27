@@ -2360,6 +2360,9 @@ vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# Power-off charging daemon
+-sbin/charger:sbin/chargeonlymode;rootfs
+
 # QMI
 etc/permissions/qti_permissions.xml
 etc/permissions/qti_libpermissions.xml
