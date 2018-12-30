@@ -1,0 +1,6 @@
+# HACK: steal drm hal's domain to avoid neverallow
+typeattribute hal_bluetooth_qti hal_drm;
+get_prop(hal_bluetooth_qti, serialno_prop)
+
+allow hal_bluetooth_qti default_prop:file { getattr open read };
+allow hal_bluetooth_qti vendor_data_file:file { getattr open read };

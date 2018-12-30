@@ -1,0 +1,14 @@
+allow system_app wificond:binder call;
+
+allow system_app netd:dir { getattr search read };
+allow system_app netd:file { getattr open read };
+allow system_app zygote:dir { getattr search read };
+allow system_app hal_gatekeeper_qti:dir { getattr search read };
+allow system_app hal_gatekeeper_qti:file { getattr open read };
+allow system_app hal_keymaster_qti:dir { getattr search read };
+allow system_app hal_keymaster_qti:file { getattr open read };
+allow system_app vendor_init:dir rw_dir_perms;
+allow system_app servicemanager:dir rw_dir_perms;
+allow system_app ueventd:dir rw_dir_perms;
+allow system_app logd:dir rw_dir_perms;
+allow system_app logd:file rw_file_perms;

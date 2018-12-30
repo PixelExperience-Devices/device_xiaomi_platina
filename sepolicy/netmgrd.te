@@ -1,2 +1,0 @@
-#============= netmgrd ==============
-allow netmgrd default_prop:property_service set;
