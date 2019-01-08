@@ -8,8 +8,7 @@
 # as published by the Free Software Foundation.
 #
 #KEY_KPENTER 96
-key  96    DPAD_CENTER  VIRTUAL
-key  102   HOME         VIRTUAL
-#key 105   DPAD_LEFT    VIRTUAL
-key  106   DPAD_RIGHT   VIRTUAL
-
+#key  96    DPAD_CENTER  VIRTUAL
+#key  102   HOME         VIRTUAL
+#key  105   DPAD_LEFT    VIRTUAL
+#key  106   DPAD_RIGHT   VIRTUAL
