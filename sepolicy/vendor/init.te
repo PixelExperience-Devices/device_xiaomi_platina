@@ -13,3 +13,5 @@ allow init vendor_file:file { execute execute_no_trans };
 allow init property_socket:sock_file { write };
 allow init hal_mlipay_hwservice:hwservice_manager add;
 allow init pmsg_device:chr_file { read write open };
+allow init hal_power_hwservice:hwservice_manager add;
+allow init hidl_base_hwservice:hwservice_manager add;
