@@ -8,4 +8,5 @@ type thermal_prop, property_type;
 type spectrum_prop, property_type;
 
 # Power
+type diag_prop, property_type;
 type power_prop, property_type;

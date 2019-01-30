@@ -1,5 +1,7 @@
 # Battery
 genfscon sysfs /devices/soc/c176000.i2c/i2c-2/2-001d            u:object_r:sysfs_battery_supply:s0
+genfscon sysfs /power/rpmh_stats/master_stats         u:object_r:sysfs_rpm:s0
+genfscon debugfs /mnh_sm                              u:object_r:debugfs_easel:s0
 
 # Fingerprint
 genfscon sysfs /devices/soc/soc:fingerprint_fpc                 u:object_r:sysfs_fingerprint:s0

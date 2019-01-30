@@ -2,6 +2,12 @@
 persist.vendor.sys.fp.              u:object_r:fingerprint_prop:s0
 ro.boot.fp.                         u:object_r:fingerprint_prop:s0
 ro.boot.fpsensor                    u:object_r:fingerprint_prop:s0
+vendor.powerhal.state		       u:object_r:power_prop:s0
+vendor.powerhal.audio		       u:object_r:power_prop:s0
+vendor.powerhal.init		       u:object_r:power_prop:s0
+
+persist.sys.diag.max.size              u:object_r:diag_prop:s0
+persist.vendor.oem.dump                u:object_r:diag_prop:s0
 
 # Mlipay
 persist.sys.ifaa                    u:object_r:ifaa_prop:s0
