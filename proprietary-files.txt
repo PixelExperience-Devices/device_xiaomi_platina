@@ -2005,6 +2005,7 @@ vendor/etc/csot_fhd_video_dsi_panel_mi.xml
 vendor/etc/tianma_fhd_video_dsi_panel_mi.xml
 vendor/etc/sdr_config.cfg
 vendor/etc/hdr_config.cfg
+
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
