@@ -1,21 +1,17 @@
-#============= vendor_init ==============
-allow vendor_init adsprpcd_file:dir create;
-allow vendor_init bt_firmware_file:dir create;
-allow vendor_init camera_data_file:dir { create setattr };
-allow vendor_init firmware_file:dir create;
-allow vendor_init media_rw_data_file:dir setattr;
-allow vendor_init rootfs:dir { add_name create setattr };
-allow vendor_init system_data_file:dir { add_name create setattr write };
-allow vendor_init wifi_data_file:dir setattr;
-allow vendor_init tombstone_data_file:dir { setattr search };
-allow vendor_init default_prop:property_service { set };
-allow vendor_init rootfs:lnk_file { setattr };
-allow vendor_init radio_prop:property_service { set };
-allow vendor_init persist_dpm_prop:property_service { set };
-allow vendor_init qcom_ims_prop:property_service { set };
-allow vendor_init mm_parser_prop:property_service { set };
-allow vendor_init persist_debug_prop:property_service { set };
-allow vendor_init vendor_camera_prop:property_service { set };
-allow vendor_init bluetooth_prop:property_service { set };
-allow vendor_init overlay_prop:property_service { set };
-allow vendor_init bservice_prop:property_service { set };
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+allow vendor_init {
+  dhcp_data_file
+  media_rw_data_file
+  system_data_file
+  tombstone_data_file
+  unencrypted_data_file
+  wifi_data_file
+}:dir { create search getattr open read setattr ioctl write add_name remove_name rmdir relabelfrom };
+
+allow vendor_init {
+  unencrypted_data_file
+}:file { create getattr open read write setattr relabelfrom unlink };
+
+set_prop(vendor_init, camera_prop)
+set_prop(vendor_init, qcom_ims_prop)

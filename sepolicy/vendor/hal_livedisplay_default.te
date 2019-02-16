@@ -1,1 +1,0 @@
-allow hal_livedisplay_default default_prop:file { read open getattr };

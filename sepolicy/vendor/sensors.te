@@ -1,1 +1,1 @@
-allow sensors system_prop:file rw_file_perms;
+get_prop(sensors, sensors_prop)

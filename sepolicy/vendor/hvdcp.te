@@ -1,1 +1,0 @@
-allow hvdcp sysfs:file rw_file_perms;
