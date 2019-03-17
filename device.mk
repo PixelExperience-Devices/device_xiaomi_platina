@@ -328,8 +328,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
 
- # Prebuilt modules
-PRODUCT_COPY_FILES += \
+# Prebuilt modules
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/exfat.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/exfat.ko \
     $(LOCAL_PATH)/prebuilt/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3_wlan.ko
 
