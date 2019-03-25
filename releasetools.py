@@ -27,10 +27,12 @@ def IncrementalOTA_Assertions(info):
 
 def AddTrustZoneAssertion(info, input_zip):
   android_info = info.input_zip.read("OTA/android-info.txt")
-  m = re.search(r'require\s+version-trustzone\s*=\s*(\S+)', android_info)
+  m = re.search(r'require\s+version-trustzone\s*=\s*(.+)$', android_info)
   if m:
-    versions = m.group(1).split('|')
-    if len(versions) and '*' not in versions:
-      cmd = 'assert(platina.verify_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
+    tz_version, build_version = m.group(1).split('|')
+    if tz_version and '*' not in tz_version:
+      cmd = ('assert(platina.verify_trustzone("{}") == "1" || abort("ERROR: Required firmware '
+                   'not found!. You need to flash {} firmware to be compatible '
+                   'with this build. Read XDA thread"););'.format(tz_version, build_version))
       info.script.AppendExtra(cmd)
   return
