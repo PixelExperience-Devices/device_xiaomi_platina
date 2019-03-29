@@ -2627,7 +2627,3 @@ vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdhdcpcp.so
-
-# Prebuilt modules
-vendor/lib/modules/exfat.ko
-vendor/lib/modules/qca_cld3_wlan.ko
