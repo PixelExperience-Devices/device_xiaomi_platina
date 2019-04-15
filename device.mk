@@ -7,6 +7,9 @@
 # Firmware
 $(call inherit-product, vendor/xiaomi-firmware/platina/firmware.mk)
 
+# Apex
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 DEVICE_PATH := device/xiaomi/platina
 
 # Setup dalvik vm configs
