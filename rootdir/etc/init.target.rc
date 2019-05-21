@@ -40,12 +40,6 @@ on init
     chown media media /dev/dbmdx-1
     chmod 0770 /dev/dbmdx-1
 
-    # chmod node /dev/gpio_rf
-    chmod 0644 /dev/gpio_rf
-
-    chown system system /dev/lirc0
-    chmod 0660 /dev/lirc0
-
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
