@@ -4,5 +4,8 @@ type ifaa_prop, property_type;
 # Thermal engine
 type thermal_prop, property_type;
 
+# Spectrum
+type spectrum_prop, property_type;
+
 # Power
 type power_prop, property_type;

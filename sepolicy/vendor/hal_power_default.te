@@ -1,12 +1,15 @@
+allow hal_power_default sysfs_sectouch:dir search;
+allow hal_power_default sysfs_sectouch:file w_file_perms;
 allow hal_power_default sysfs_touchpanel:file w_file_perms;
 allow hal_power_default sysfs:file { open write };
 allow hal_power_default sysfs_tap_to_wake:file rw_file_perms;
 r_dir_file(hal_power_default, debugfs_wlan)
 
 # To do powerhint on nodes defined in powerhint.json
-allow hal_power_default sysfs_msm_subsys:dir search; allow hal_power_default 
-sysfs_msm_subsys:file rw_file_perms; allow hal_power_default 
-sysfs_devices_system_cpu:file rw_file_perms;
+type sysfs_msm_subsys, sysfs_type, fs_type;
+allow hal_power_default sysfs_msm_subsys:dir search;
+allow hal_power_default sysfs_msm_subsys:file rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_default device_latency:chr_file rw_file_perms;
 
 # To get/set powerhal state property
