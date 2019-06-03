@@ -58,8 +58,7 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/platina
-TARGET_KERNEL_CONFIG := platina-perf_defconfig
-#TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CONFIG := acrux_defconfig
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -153,7 +152,7 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/c178000.i2c/i2c-4/4-0038/fts_gesture_mode"
+TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/wake_gesture"
 
 # EXFAT
 TARGET_EXFAT_DRIVER := exfat
@@ -203,6 +202,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 
 # Power
 TARGET_USES_INTERACTION_BOOST := true
+TARGET_PROVIDES_POWERHAL := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
@@ -255,6 +255,8 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)

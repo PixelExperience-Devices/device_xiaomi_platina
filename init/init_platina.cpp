@@ -89,11 +89,8 @@ static void init_setup_model_properties()
             break;
     fin.close();
 
-    if (buf.find("2.31.0") != std::string::npos) {
-        property_set("ro.product.model", "MI 8 Lite");
-    } else {
-        property_set("ro.product.model", "MI 8 Lite");
-    }
+    property_set("ro.product.model", "MI 8 Lite");
+
 }
 
 static void init_alarm_boot_properties()

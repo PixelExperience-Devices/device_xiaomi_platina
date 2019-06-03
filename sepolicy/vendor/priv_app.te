@@ -1,0 +1,1 @@
+allow priv_app spectrum_prop:file read;

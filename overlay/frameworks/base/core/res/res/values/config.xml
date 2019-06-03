@@ -408,6 +408,14 @@
         <item>"/system/framework/boot.vdex"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
         <item>"/system/framework/boot-core-libart.vdex"</item>
+        <item>/system/lib64/libRScpp.so</item>
+        <item>/system/lib64/libRS.so</item>
+        <item>/system/lib64/libRS_internal.so</item>
+        <item>/system/lib64/libbcinfo.so</item>
+        <item>/system/lib64/libRSDriver.so</item>
+        <item>/system/lib64/libRSCpuRef.so</item>
+        <item>/system/lib64/libblas.so</item>
+        <item>"/system/lib64/libsurfaceflinger.so"</item>
     </string-array>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
@@ -468,21 +476,15 @@
 
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
-        <item>0</item>
-        <item>1</item>
-        <item>20</item>
-        <item>21</item>
+        <item>23</item>
     </integer-array>
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
-        <item>0</item>
-        <item>10</item>
-        <item>20</item>
-        <item>30</item>
+        <item>23</item>
     </integer-array>
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>40</item>
+        <item>23</item>
     </integer-array>
 
     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
@@ -490,19 +492,6 @@
          will not debounce light sensor readings -->
     <integer name="config_lightSensorWarmupTime">200</integer>
 
-    <!-- The bounding path of the cutout region of the main built-in display.
-         Must either be empty if there is no cutout region, or a string that is parsable by
-         {@link android.util.PathParser}.
-          The path is assumed to be specified in display coordinates with pixel units and in
-         the display's native orientation, with the origin of the coordinate system at the
-         center top of the display.
-          To facilitate writing device-independent emulation overlays, the marker `@dp` can be
-         appended after the path string to interpret coordinates in dp instead of px units.
-         Note that a physical cutout should be configured in pixels for the best results. -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -150,0 L -150,88 L 150,88 L 150,0 Z</string>
-    <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">89.0px</dimen>
-    <dimen name="status_bar_height_landscape">24.0dp</dimen> =======
 	<!-- Paths to the libraries that contain device specific key handlers -->
 	<string-array name="config_deviceKeyHandlerLibs" translatable="false">
 		<item>/system/framework/org.lineageos.keyhandler.jar</item>
@@ -512,10 +501,13 @@
 	<string-array name="config_deviceKeyHandlerClasses" translatable="false">
 		<item>org.lineageos.settings.device.KeyHandler</item>
 	</string-array>
-     
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+     <!-- Smart charge sysfs node and value for suspend/resume charging-->
+     <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+     <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
+     <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+
+     <!-- We don't have outdated QtiTelephony -->
+     <bool name="config_oldQtiTelephony">false</bool>
 
 </resources>

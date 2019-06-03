@@ -1,3 +1,33 @@
-# Allow ConfigPanel to work
-allow system_app sysfs_sectouch:dir search;
-allow system_app sysfs_sectouch:file rw_file_perms;
++#============= system_app ==============
+allow system_app sysfs_zram:file open;
+allow system_app proc_pagetypeinfo:file { getattr open read };
+allow system_app sysfs:file { getattr open write };
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_leds:file { getattr open write };
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file read;
+
+allow system_app spectrum_prop:property_service set;
+get_prop(system_app, spectrum_prop);
+
+allow system_app wificond:binder call;
+
+allow system_app netd:dir { getattr search read };
+allow system_app netd:file { getattr open read };
+allow system_app zygote:dir { getattr search read };
+allow system_app hal_gatekeeper_qti:dir { getattr search read };
+allow system_app hal_gatekeeper_qti:file { getattr open read };
+allow system_app hal_keymaster_qti:dir { getattr search read };
+allow system_app hal_keymaster_qti:file { getattr open read };
+allow system_app vendor_init:dir rw_dir_perms;
+allow system_app servicemanager:dir rw_dir_perms;
+allow system_app ueventd:dir rw_dir_perms;
+allow system_app logd:dir rw_dir_perms;
+allow system_app logd:file rw_file_perms;
+
+# Vibrator
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir search;
+
+# XiaomiParts Camera2 API
+allow system_app camera_prop:property_service set;
