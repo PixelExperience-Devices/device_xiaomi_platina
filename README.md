@@ -1,24 +1,6 @@
-## Xiaomi Mi 8 Lite device tree:
-Base: mko-mr1
-Credits:
-- @dianlujitao
-- @GuaiYiHu
-- @TingyiChen
-- @nysadev
-- @lihonglinglory
-- @Lunarixus
-- @rsyhan
-- @ManoloRey
-- @brunorochaa
-And any others I have missed:P
+Device tree for Xiaomi MI 8 Lite
 
-----------------------------------------------------------------------
-
-Copyright 2019 - The LineageOS Project
-
-mkp device tree for Xiaomi MI 8 Lite
-
-Xiaomi Mi MI 8 Lite was announced and released in Sep 2018.
+Xiaomi MI 8 Lite was announced and released in Sep 2018.
 
 ## Device specifications
 
