@@ -366,7 +366,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
     init.target.rc \
-    init.performance.platina.rc
+    init.performance.platina.rc \
     ueventd.qcom.rc \
     fstab.qcom
 
