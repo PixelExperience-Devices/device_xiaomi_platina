@@ -1,4 +1,5 @@
 # System prop from miui
+
 # SAR Sensor Fusion
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.xiaomi.sar_fusion=true \
@@ -18,7 +19,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Idle timeout, non-idle switch to idle time
 PRODUCT_PROPERTY_OVERRIDES += \
     sdm.idle_time=1100
-
 
 # System.prop for sdm660
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -145,6 +145,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # System property for maximum number of HFP client connections
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1
+
 # Force disable Bluetooth AAC by default
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.a2dp.aac_disable=true
@@ -445,7 +446,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.colorpick_adjust=true \
     ro.df.effect.conflict=1 \
     persist.vendor.df.extcolor.proc=0
-
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mokee.maintainer=glory
