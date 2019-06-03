@@ -1,0 +1,15 @@
+[
+  {
+    "repository": "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch": "lineage-16.0"
+  },
+  {
+    "repository": "proprietary_vendor_xiaomi_platina",
+    "target_path": "vendor/xiaomi/platina"
+  },
+  {
+    "repository": "kernel_xiaomi_platina",
+    "target_path": "kernel/xiaomi/platina"
+  }
+]
