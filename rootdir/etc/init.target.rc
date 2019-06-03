@@ -132,6 +132,10 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb0/msm_fb_dispparam
     chown system system /sys/class/thermal/thermal_message/sconfig
 
+# TouchScreen
+    chown system system /proc/touchpanel/wake_gesture
+    chmod 0660 /proc/touchpanel/wake_gesture
+
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
 

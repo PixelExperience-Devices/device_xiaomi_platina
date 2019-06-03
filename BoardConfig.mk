@@ -152,7 +152,7 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/wake_gesture"
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/wake_gesture"
 
 # EXFAT
 TARGET_EXFAT_DRIVER := exfat
