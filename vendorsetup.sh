@@ -1,0 +1,3 @@
+add_lunch_combo lineage_platina-userdebug
+add_lunch_combo lineage_platina-eng
+add_lunch_combo lineage_platina-user
