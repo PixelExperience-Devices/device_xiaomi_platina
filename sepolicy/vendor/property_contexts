@@ -15,8 +15,10 @@ persist.sys.thermal.                u:object_r:thermal_prop:s0
 sys.thermal.                        u:object_r:thermal_prop:s0
 
 # Camera HAL3
-persist.vendor.camera.HAL3.          u:object_r:camera_prop:s0
-persist.camera.eis.                  u:object_r:camera_prop:s0
+persist.vendor.camera.HAL3.enabled  u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.eis.enable    u:object_r:vendor_camera_prop:s0
+persist.camera.HAL3.enabled         u:object_r:camera_prop:s0
+persist.camera.eis.enable           u:object_r:camera_prop:s0
 
 # Spectrum
 persist.spectrum.profile             u:object_r:spectrum_prop:s0
