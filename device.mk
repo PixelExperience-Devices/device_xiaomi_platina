@@ -26,6 +26,9 @@ $(call inherit-product, vendor/xiaomi/platina/platina-vendor.mk)
 # Properties
 include $(LOCAL_PATH)/vendor_prop.mk
 
+# OEM Permissions
+include $(LOCAL_PATH)/oem-permissions/permissions.mk
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
