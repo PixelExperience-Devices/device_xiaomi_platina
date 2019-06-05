@@ -131,7 +131,7 @@ on boot
     chown system system /proc/tp_selftest
     chown system system /sys/devices/virtual/graphics/fb0/msm_fb_dispparam
     chown system system /sys/class/thermal/thermal_message/sconfig
-
+    
 # TouchScreen
     chown system system /proc/touchpanel/wake_gesture
     chmod 0660 /proc/touchpanel/wake_gesture
