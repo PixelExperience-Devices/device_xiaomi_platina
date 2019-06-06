@@ -142,6 +142,9 @@ on boot
 #Load WLAN driver
    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+# default country code
+    setprop ro.boot.wificountrycode 00
+
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "rndis_bam"
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
