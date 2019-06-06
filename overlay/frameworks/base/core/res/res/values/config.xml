@@ -510,4 +510,7 @@
      <!-- We don't have outdated QtiTelephony -->
      <bool name="config_oldQtiTelephony">false</bool>
 
+     <!-- Whether device has a physical display cutout -->
+    <bool name="config_physicalDisplayCutout">true</bool>
+
 </resources>
