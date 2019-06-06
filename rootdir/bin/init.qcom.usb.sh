@@ -73,7 +73,7 @@ fi
 #
 # Override USB default composition
 #
-debuggable=`getprop ro.debuggable`
+debuggable="1"
 
 # If USB persist config not set, set default configuration
 if [ "$(getprop persist.vendor.usb.config)" == "" -a \
