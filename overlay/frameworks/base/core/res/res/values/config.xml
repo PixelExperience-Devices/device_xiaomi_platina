@@ -513,4 +513,7 @@
      <!-- Whether device has a physical display cutout -->
     <bool name="config_physicalDisplayCutout">true</bool>
 
+    <!-- Specify custom blanking delay of the display -->
+    <integer name="config_screen_off_delay">0</integer>
+
 </resources>
