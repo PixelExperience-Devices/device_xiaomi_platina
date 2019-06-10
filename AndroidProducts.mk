@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
  PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_platina.mk
+    $(LOCAL_DIR)/aosp_platina.mk
