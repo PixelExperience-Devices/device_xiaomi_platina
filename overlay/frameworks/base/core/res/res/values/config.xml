@@ -480,7 +480,7 @@
     </integer-array>
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
-        <item>23</item>
+        <item>18</item>
     </integer-array>
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">        
