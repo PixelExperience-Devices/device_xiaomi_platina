@@ -1,0 +1,8 @@
+allow hal_drm_widevine firmware_file:lnk_file read;
+allow hal_drm_widevine media_data_file:dir search;
+allow hal_drm_widevine media_data_file:dir getattr;
+allow hal_drm_widevine media_data_file:file { read write };
+allow hal_drm_widevine media_data_file:dir read;
+allow hal_drm_widevine media_data_file:file open;
+allow hal_drm_widevine media_data_file:dir { open write };
+allow hal_drm_widevine media_data_file:file getattr;
