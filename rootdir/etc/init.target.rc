@@ -140,6 +140,8 @@ on boot
     mkdir /data/vendor/camera 0770 camera camera
 
 #Load WLAN driver
+   insmod /vendor/lib/modules/qca_cld3_wlan.ko
+   setprop wlan.driver.status "ok"
    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 # default country code

@@ -35,7 +35,7 @@
 #define RAMP_STEP_MS    "ramp_step_ms"
 #define START_IDX       "start_idx"
 
-#define MAX_LED_BRIGHTNESS    155
+#define MAX_LED_BRIGHTNESS    200
 #define MAX_LCD_BRIGHTNESS    4095
 
 /*
