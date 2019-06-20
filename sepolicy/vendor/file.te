@@ -2,7 +2,6 @@
 type persist_subsys_file, file_type;
 type sysfs_rpm, sysfs_type, fs_type;
 type debugfs_easel, debugfs_type, fs_type;
-type sysfs_touchpanel, sysfs_type, fs_type;
 
 type proc_touchpanel, fs_type;
 

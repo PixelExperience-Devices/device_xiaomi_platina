@@ -2,6 +2,7 @@
 persist.vendor.sys.fp.              u:object_r:fingerprint_prop:s0
 ro.boot.fp.                         u:object_r:fingerprint_prop:s0
 ro.boot.fpsensor                    u:object_r:fingerprint_prop:s0
+
 vendor.powerhal.state		       u:object_r:power_prop:s0
 vendor.powerhal.audio		       u:object_r:power_prop:s0
 vendor.powerhal.init		       u:object_r:power_prop:s0
@@ -60,6 +61,3 @@ remosaic.debug.dump                 u:object_r:vendor_default_prop:s0
 remosaic.debug.loglevel             u:object_r:vendor_default_prop:s0
 ro.build.software.version           u:object_r:vendor_default_prop:s0
 
-# Power
-vendor.powerhal.state u:object_r:power_prop:s0
-vendor.powerhal.audio u:object_r:power_prop:s0
