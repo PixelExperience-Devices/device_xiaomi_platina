@@ -17,9 +17,6 @@
 /vendor/usr/idc(/.*)?                               u:object_r:idc_file:s0
 /vendor/usr/keylayout(/.*)?                         u:object_r:keylayout_file:s0
 
-# Mlipay
-/(vendor|system/vendor)/bin/mlipayd                 u:object_r:hal_mlipay_default_exec:s0
-
 # HAL exec
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine      u:object_r:hal_drm_widevine_exec:s0
 
