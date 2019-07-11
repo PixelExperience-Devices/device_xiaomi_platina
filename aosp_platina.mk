@@ -22,9 +22,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit from platina device
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
-# Inherit from Miui Camera
-$(call inherit-product, vendor/MiuiCamera/config.mk)
-
 # Inherit some common PixelExperience stuff.
 export CUSTOM_BUILD_TYPE=OFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1080
