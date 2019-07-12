@@ -351,6 +351,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.redir_party_num=1 \
     ro.treble.enabled=true \
     keyguard.no_require_sim=true \
+    persist.radio.aosp_usr_pref_sel=true \
     persist.radio.apm_sim_not_pwdn=1
 
 # Vendor prop from miui
