@@ -1,4 +1,5 @@
-allow init proc:file read;
+#============= init ==============
+allow init proc:file { read write };
 allow init default_android_hwservice:hwservice_manager add;
 allow init hal_fingerprint_hwservice:hwservice_manager add;
 allow init hal_light_hwservice:hwservice_manager add;
@@ -13,6 +14,7 @@ allow init vendor_file:file { execute execute_no_trans };
 allow init property_socket:sock_file { write };
 allow init pmsg_device:chr_file { read write open };
 allow init hal_power_hwservice:hwservice_manager add;
-allow init hidl_base_hwservice:hwservice_manager add;
-
-allow init sysfs_mmc_host:file { write };
+allow init sysfs_devfreq:file write;
+allow init sysfs_devices_system_cpu:file write;
+allow init sysfs_mmc_host:file { open write };
+allow init sysfs_msm_power:file write;

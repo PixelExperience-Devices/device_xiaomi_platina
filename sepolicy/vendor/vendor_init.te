@@ -8,7 +8,7 @@ allow vendor_init media_rw_data_file:dir setattr;
 allow vendor_init rootfs:dir { add_name create setattr };
 allow vendor_init system_data_file:dir { add_name create setattr write };
 allow vendor_init wifi_data_file:dir setattr;
-allow vendor_init tombstone_data_file:dir { setattr search };
+allow vendor_init tombstone_data_file:dir { setattr search add_name };
 allow vendor_init default_prop:property_service { set };
 allow vendor_init rootfs:lnk_file { setattr };
 allow vendor_init radio_prop:property_service { set };
