@@ -12,4 +12,5 @@ allow qti_init_shell default_prop:file { getattr open read };
 allow qti_init_shell toolbox_exec:file { getattr read open execute execute_no_trans };
 allow qti_init_shell vendor_data_file:file { getattr open read write };
 allow qti_init_shell exported_system_radio_prop:property_service { set };
-allow qti_init_shell exported_system_radio_prop:file read;
+allow qti_init_shell exported_system_radio_prop:file { open read };
+allow qti_init_shell vendor_data_file:dir write;
