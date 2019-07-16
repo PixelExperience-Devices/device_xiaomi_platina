@@ -33,4 +33,7 @@
 
     <!-- Margin on the right side of the system icon group on Keyguard. -->
     <dimen name="system_icons_keyguard_padding_end">11dp</dimen>
+
+    <!-- Width for the spacer, used between QS tiles. -->
+    <dimen name="qs_quick_tile_space_width">0dp</dimen>
 </resources>
