@@ -13,4 +13,4 @@ allow qti_init_shell toolbox_exec:file { getattr read open execute execute_no_tr
 allow qti_init_shell vendor_data_file:file { create getattr open read write };
 allow qti_init_shell exported_system_radio_prop:property_service { set };
 allow qti_init_shell exported_system_radio_prop:file { open read getattr };
-allow qti_init_shell vendor_data_file:dir { write add_name };
+allow qti_init_shell vendor_data_file:dir { write read add_name };

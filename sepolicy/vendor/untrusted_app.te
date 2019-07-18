@@ -6,3 +6,7 @@ allow untrusted_app sysfs_switch:dir search;
 allow untrusted_app proc_qtaguid_stat:file open;
 allow untrusted_app proc_zoneinfo:file open;
 allow untrusted_app sysfs_graphics:dir search;
+allow untrusted_app bluetooth_prop:file read;
+allow untrusted_app sysfs:file read;
+allow untrusted_app sysfs_kgsl:dir search;
+allow untrusted_app sysfs_net:dir search;

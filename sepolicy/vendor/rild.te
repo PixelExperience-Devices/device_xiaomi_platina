@@ -1,5 +1,5 @@
 allow rild default_prop:file { read open getattr };
 allow rild tombstone_data_file:dir { write search add_name };
-allow rild tombstone_data_file:file { read write open };
+allow rild tombstone_data_file:file { create read write open };
 allow rild vendor_file:file ioctl;
 set_prop(rild, system_radio_prop);
