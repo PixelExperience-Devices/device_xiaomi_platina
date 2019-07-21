@@ -2,11 +2,11 @@
   {
     "repository":  "vendor_xiaomi_platina",
     "target_path": "vendor/xiaomi/platina",
-    "branch":      "update"
+    "branch":      "pie"
   },
   {
     "remote":      "github",
-    "repository":  "nysadev/acrux",
+    "repository":  "aphielGang/acrux_kernel_xiaomi_sdm660",
     "target_path": "kernel/xiaomi/platina",
     "branch":      "pie"
   },
