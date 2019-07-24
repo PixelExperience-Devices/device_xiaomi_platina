@@ -5,3 +5,4 @@ allow platform_app sysfs_graphics:dir search;
 allow platform_app sysfs_graphics:file { open read };
 allow platform_app sysfs_leds:dir search;
 allow platform_app system_app_data_file:dir getattr;
+allow platform_app fs_bpf:dir search;

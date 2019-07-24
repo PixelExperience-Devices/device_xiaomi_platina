@@ -5,7 +5,7 @@ allow system_app sysfs:file { getattr open write };
 allow system_app sysfs_leds:dir search;
 allow system_app sysfs_leds:file { getattr open write };
 allow system_app sysfs_zram:dir search;
-allow system_app sysfs_zram:file read;
+allow system_app sysfs_zram:file { read getattr };
 allow system_app spectrum_prop:property_service set;
 get_prop(system_app, spectrum_prop);
 
@@ -23,7 +23,7 @@ allow system_app ueventd:dir rw_dir_perms;
 allow system_app logd:dir rw_dir_perms;
 allow system_app logd:file rw_file_perms;
 allow system_app fs_bpf:dir search;
-allow system_app vendor_file:file read;
+allow system_app vendor_file:file { open read getattr execute };
 
 # Vibrator
 allow system_app sysfs_vibrator:file rw_file_perms;
