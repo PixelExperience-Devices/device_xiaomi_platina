@@ -58,3 +58,5 @@ remosaic.debug.dump                 u:object_r:vendor_default_prop:s0
 remosaic.debug.loglevel             u:object_r:vendor_default_prop:s0
 ro.build.software.version           u:object_r:vendor_default_prop:s0
 
+# Dirac
+persist.audio.dirac
