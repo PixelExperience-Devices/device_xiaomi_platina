@@ -1,2 +1,1 @@
 allow webview_zygote zygote:file { write open read getattr };
-allow webview_zygote theme_data_file:dir search;
