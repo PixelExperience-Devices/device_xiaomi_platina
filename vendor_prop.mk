@@ -203,7 +203,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #set for xiaomi headset effect
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.soundfx.dirac=true
+    ro.audio.soundfx.dirac=true \
+    persist.audio.dirac.speaker=true
 
 # System prop for RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
