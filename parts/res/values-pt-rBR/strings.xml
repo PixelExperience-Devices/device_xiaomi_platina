@@ -17,7 +17,7 @@
 -->
 <resources>
     <!-- Dirac settings -->
-    <string name="dirac_title">Equalizador Xiaomi - DIRAC</string>
+    <string name="dirac_title">Equalizador Xiaomi</string>
     <string name="dirac_summary">Melhorar a qualidade de áudio</string>
     <string name="dirac_headset_title">Escolha o seu fone de ouvido</string>
     <string name="dirac_preset_title">Escolha um perfil predefinido</string>
