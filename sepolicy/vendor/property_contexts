@@ -23,6 +23,12 @@ persist.vendor.camera.HAL3.enabled  u:object_r:vendor_camera_prop:s0
 persist.vendor.camera.eis.enable    u:object_r:vendor_camera_prop:s0
 persist.camera.HAL3.enabled         u:object_r:camera_prop:s0
 persist.camera.eis.enable           u:object_r:camera_prop:s0
+camera.                             u:object_r:camera_prop:s0
+cameradaemon.SaveMemAtBoot          u:object_r:camera_prop:s0
+cpp.set.clock                       u:object_r:camera_prop:s0
+disable.cpp.power.collapse          u:object_r:camera_prop:s0
+persist.camera.                     u:object_r:camera_prop:s0
+persist.vendor.camera.              u:object_r:vendor_camera_prop:s0
 
 # Spectrum
 persist.spectrum.profile             u:object_r:spectrum_prop:s0
