@@ -242,7 +242,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Min/max cpu in core control
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.core_ctl_min_cpu=2
+    ro.vendor.qti.core_ctl_min_cpu=2 \
     ro.vendor.qti.core_ctl_max_cpu=4
 
 # Bringup properties
@@ -283,8 +283,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.pickup=true
 
 # HAL1 apps list
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    vendor.camera.hal1.packagelist=com.android.camera2
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.hal1.packagelist=com.android.camera2,com.whatsapp
 
 # Enable HAL3
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -292,8 +292,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.eis.enable=1
 
 # Expose aux camera for below packages
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.android.camera2
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.android.camera2
 
 # Disable UBWC for camera
 PRODUCT_PROPERTY_OVERRIDES += \
