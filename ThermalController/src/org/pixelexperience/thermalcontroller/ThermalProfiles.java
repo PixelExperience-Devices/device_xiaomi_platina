@@ -44,6 +44,7 @@ public class ThermalProfiles {
             case "com.antutu.ABenchMark":
             case "com.futuremark.dmandroid.application":
             case "com.primatelabs.geekbench":
+            case "skynet.cputhrottlingtest":
                 return MODE_PERFORMANCE;
             case "com.tencent.ig":
             case "com.dts.freefireth":
