@@ -28,3 +28,4 @@ allow hal_fingerprint_default default_prop:file rw_file_perms;
 allow hal_fingerprint_default sysfs_sectouch:dir { getattr open search read };
 allow hal_fingerprint_default sysfs_sectouch:file rw_file_perms;
 allow hal_fingerprint_default default_android_hwservice:hwservice_manager add;
+allow hal_fingerprint_default storage_file:dir search;
