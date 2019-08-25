@@ -1,1 +1,2 @@
-allow hal_wifi_default default_prop:file {open read };
+#============= hal_wifi_default ==============
+allow hal_wifi_default default_prop:file {open read getattr };
