@@ -1,0 +1,2 @@
+#============= hal_vibrator_default ==============
+allow hal_vibrator_default dumpstate:fd use;

@@ -3,4 +3,5 @@ allow hwservicemanager init:binder { call };
 allow hwservicemanager init:dir search;
 allow hwservicemanager init:file { open read };
 allow hwservicemanager init:process getattr;
+allow hwservicemanager dumpstate:fd use;
 allow init hidl_memory_hwservice:hwservice_manager { find };
