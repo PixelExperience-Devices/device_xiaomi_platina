@@ -1,0 +1,2 @@
+#============= netutils_wrapper ==============
+allow netutils_wrapper self:capability sys_admin;
