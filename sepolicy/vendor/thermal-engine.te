@@ -4,7 +4,7 @@ type_transition thermal-engine system_data_file:file decrypt_file "decrypt.txt";
 allow thermal-engine decrypt_file:file create_file_perms;
 allow thermal-engine thermal_data_file:dir rw_dir_perms;
 allow thermal-engine thermal_data_file:file create_file_perms;
-allow thermal-engine self:capability { chown fowner dac_override };
+allow thermal-engine self:capability { chown fowner dac_override sys_admin };
 allow thermal-engine system_data_file:dir w_dir_perms;
 allow thermal-engine vendor_data_file:dir { add_name remove_name read write };
 allow thermal-engine vendor_data_file:file { open getattr read setattr write create rename unlink };

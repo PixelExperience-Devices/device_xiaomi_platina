@@ -1,0 +1,2 @@
+#============= irsc_util ==============
+allow irsc_util self:capability sys_admin;

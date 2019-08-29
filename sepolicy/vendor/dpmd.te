@@ -1,0 +1,2 @@
+#============= dpmd ==============
+allow dpmd self:capability sys_admin;

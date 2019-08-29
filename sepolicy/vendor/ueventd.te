@@ -1,1 +1,3 @@
+#============= ueventd ==============
 allow ueventd mba_debug_dev:blk_file { open read };
+allow ueventd self:capability sys_admin;

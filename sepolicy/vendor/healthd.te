@@ -1,5 +1,5 @@
 # Xiaomi charger
-allow healthd self:capability { dac_override dac_read_search chown };
+allow healthd self:capability { dac_override dac_read_search chown sys_admin };
 allow healthd proc:file r_file_perms;
 allow healthd rootfs:dir create_dir_perms;
 allow healthd persist_subsys_file:dir rw_dir_perms;

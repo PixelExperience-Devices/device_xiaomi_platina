@@ -1,0 +1,2 @@
+#============= adbd ==============
+allow adbd self:capability sys_admin;

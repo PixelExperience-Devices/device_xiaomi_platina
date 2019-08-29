@@ -20,3 +20,5 @@ allow untrusted_app_27 proc:file { open read };
 allow untrusted_app_27 proc_tty_drivers:file read;
 allow untrusted_app_27 sysfs_kgsl:file read;
 allow untrusted_app_27 sysfs_kgsl:lnk_file read;
+allow untrusted_app_27 rootfs:dir read;
+allow untrusted_app_27 mnt_vendor_file:dir search;

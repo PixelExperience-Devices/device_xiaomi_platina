@@ -19,3 +19,4 @@ allow init sysfs_devices_system_cpu:file write;
 allow init sysfs_mmc_host:file { open write };
 allow init sysfs_msm_power:file { open write };
 allow init proc_dirty_ratio:file write;
+allow init sysfs_battery_supply:file setattr;

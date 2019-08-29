@@ -1,0 +1,2 @@
+#============= msm_irqbalanced ==============
+allow msm_irqbalanced self:capability sys_admin;
