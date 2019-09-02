@@ -194,15 +194,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.in_period_size=144 \
     vendor.audio_hal.period_multiplier=3
 
-#add for dirac algo tsx 9/12
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dirac.acs.controller=qem \
-    persist.dirac.acs.storeSettings=1 \
-    persist.dirac.acs.ignore_error=1
-
-#set for xiaomi headset effect
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.audio.soundfx.dirac=true
 
 # System prop for RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
