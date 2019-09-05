@@ -20,3 +20,6 @@ allow init sysfs_mmc_host:file { open write };
 allow init sysfs_msm_power:file { open write };
 allow init proc_dirty_ratio:file write;
 allow init sysfs_battery_supply:file setattr;
+allow init system_file:dir relabelfrom;
+allow init system_file:file relabelfrom;
+allow init tmpfs:file relabelfrom;
