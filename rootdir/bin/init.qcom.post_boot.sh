@@ -27,8 +27,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-target=`getprop ro.board.platform`
-
 function configure_zram_parameters() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
@@ -593,107 +591,22 @@ case "$target" in
     ;;
 esac
 
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
-chown -h system /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
-
-emmc_boot=`getprop vendor.boot.emmc`
-case "$emmc_boot"
-    in "true")
-        chown -h system /sys/devices/platform/rs300000a7.65536/force_sync
-        chown -h system /sys/devices/platform/rs300000a7.65536/sync_sts
-        chown -h system /sys/devices/platform/rs300100a7.65536/force_sync
-        chown -h system /sys/devices/platform/rs300100a7.65536/sync_sts
-    ;;
-esac
-
 # Post-setup services
-case "$target" in
-    "msm8660" | "msm8960" | "msm8226" | "msm8610" | "mpq8092" )
-        start mpdecision
-    ;;
-    "msm8916")
-        setprop vendor.post_boot.parsed 1
-
-        if [ -f /sys/devices/soc0/soc_id ]; then
-           soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-           soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
-        case $soc_id in
-            "239" | "241" | "263" | "268" | "269" | "270" | "271")
-            setprop vendor.min_freq_0 960000
-            setprop vendor.min_freq_4 800000
-        ;;
-            "206" | "247" | "248" | "249" | "250" | "233" | "240" | "242")
-            setprop vendor.min_freq_0 800000
-        ;;
-        esac
-    ;;
-    "msm8909")
-        setprop vendor.post_boot.parsed 1
-    ;;
-    "msm8952")
-        setprop vendor.post_boot.parsed 1
-    ;;
-    "msm8937" | "msm8953")
-        setprop vendor.post_boot.parsed 1
-
-        low_ram_enable=`getprop ro.config.low_ram`
-
-        if [ "$low_ram_enable" != "true" ]; then
-        start gamed
-        fi
-    ;;
-    "msm8974")
-        start mpdecision
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-    ;;
-    "msm8994" | "msm8992" | "msm8996" | "msm8998" | "sdm660" | "apq8098_latv" | "sdm845" | "sdm710" | "msmnile" | "qcs605" | "sm6150" | "trinket")
-        setprop vendor.post_boot.parsed 1
-    ;;
-    "apq8084")
-        rm /data/system/perfd/default_values
-        start mpdecision
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/sda/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdb/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdc/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdd/bdi/read_ahead_kb
-        echo 512 > /sys/block/sde/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdf/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdg/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdh/bdi/read_ahead_kb
-    ;;
-    "msm7627a")
-        if [ -f /sys/devices/soc0/soc_id ]; then
-            soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-            soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
-        case "$soc_id" in
-            "127" | "128" | "129")
-                start mpdecision
-        ;;
-        esac
-    ;;
-esac
+setprop vendor.post_boot.parsed 1
 
 # Let kernel know our image version/variant/crm_version
-if [ -f /sys/devices/soc0/select_image ]; then
-    image_version="10:"
-    image_version+=`getprop ro.build.id`
-    image_version+=":"
-    image_version+=`getprop ro.build.version.incremental`
-    image_variant=`getprop ro.product.name`
-    image_variant+="-"
-    image_variant+=`getprop ro.build.type`
-    oem_version=`getprop ro.build.version.codename`
-    echo 10 > /sys/devices/soc0/select_image
-    echo $image_version > /sys/devices/soc0/image_version
-    echo $image_variant > /sys/devices/soc0/image_variant
-    echo $oem_version > /sys/devices/soc0/image_crm_version
-fi
+image_version="10:"
+image_version+=`getprop ro.build.id`
+image_version+=":"
+image_version+=`getprop ro.build.version.incremental`
+image_variant=`getprop ro.product.name`
+image_variant+="-"
+image_variant+=`getprop ro.build.type`
+oem_version=`getprop ro.build.version.codename`
+echo 10 > /sys/devices/soc0/select_image
+echo $image_version > /sys/devices/soc0/image_version
+echo $image_variant > /sys/devices/soc0/image_variant
+echo $oem_version > /sys/devices/soc0/image_crm_version
 
 # Parse misc partition path and set property
 misc_link=$(ls -l /dev/block/bootdevice/by-name/misc)
