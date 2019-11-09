@@ -2,4 +2,7 @@ subdirs = [
     "*"
 ]
 soong_namespace {
+    imports: [
+        "hardware/google/pixel",
+    ],
 }
