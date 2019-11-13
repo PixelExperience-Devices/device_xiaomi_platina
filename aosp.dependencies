@@ -6,7 +6,7 @@
   },
   {
     "remote":      "github",
-    "repository":  "RaphielGang/acrux_kernel_xiaomi_sdm660",
+    "repository":  "rochadev/kernel_xiaomi_platina-acrux",
     "target_path": "kernel/xiaomi/platina",
     "branch":      "pie"
   },

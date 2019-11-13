@@ -24,7 +24,6 @@ $(call inherit-product-if-exists, vendor/xiaomi/Gcam/config.mk)
 $(call inherit-product, device/xiaomi/platina/device.mk)
 
 # Inherit some common PixelExperience stuff.
-export CUSTOM_BUILD_TYPE=OFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_GAPPS_ARCH := arm64
