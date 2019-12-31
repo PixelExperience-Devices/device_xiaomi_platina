@@ -533,6 +533,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
-# XiaomiParts
+# Wallpapers
 PRODUCT_PACKAGES += \
-   XiaomiParts
+    PixelLiveWallpaperPrebuilt
+
+# XiaomiParts
+#PRODUCT_PACKAGES += \
+#   XiaomiParts
