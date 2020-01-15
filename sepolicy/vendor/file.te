@@ -6,6 +6,9 @@ type sysfs_info, fs_type, sysfs_type;
 
 allow ueventd ir_dev_file:chr_file { create setattr };
 
+# Kcal
+type kcal_dev, sysfs_type, fs_type;
+
 # Touchscreen wake_gesture
 type sysfs_tap_to_wake, sysfs_type, fs_type;
 
@@ -13,12 +16,6 @@ type sysfs_tap_to_wake, sysfs_type, fs_type;
 type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
-
-# Hall Switch
-type hall_dev, sysfs_type, fs_type;
-
-# Kcal
-type kcal_dev, sysfs_type, fs_type;
 
 type sysfs_light, fs_type, sysfs_type;
 type thermal_data_file, file_type, data_file_type;

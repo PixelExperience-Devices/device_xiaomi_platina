@@ -171,19 +171,11 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
 
-# Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
-
-# Folio
-PRODUCT_PACKAGES += \
-    folio_daemon
 
 # Freeform Multiwindow
 PRODUCT_COPY_FILES += \
@@ -537,7 +529,3 @@ PRODUCT_BOOT_JARS += \
 # Wallpapers
 PRODUCT_PACKAGES += \
     PixelLiveWallpaperPrebuilt
-
-# XiaomiParts
-#PRODUCT_PACKAGES += \
-#   XiaomiParts
