@@ -1,5 +1,5 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "xiaomi/wayne/wayne:8.1.0/OPM1.171019.011/V9.5.11.0.ODCCNFA:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:10/QQ1D.200205.002/6084393:user/release-keys"
 
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
