@@ -285,8 +285,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.telephony.use_old_mnc_mcc_format=true \
     ro.vendor.use_data_netmgrd=true \
-    telephony.lteOnCdmaDevice=1 \
-    persist.sys.fflag.override.settings_network_and_internet_v2=true
+    telephony.lteOnCdmaDevice=1
 
 # Rendering
 PRODUCT_PROPERTY_OVERRIDES += \
