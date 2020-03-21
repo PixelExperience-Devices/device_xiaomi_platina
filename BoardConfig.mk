@@ -207,6 +207,9 @@ TARGET_USES_QCOM_BSP := false
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 BOARD_HAS_LARGE_FILESYSTEM := true
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
 # Renderscript
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
