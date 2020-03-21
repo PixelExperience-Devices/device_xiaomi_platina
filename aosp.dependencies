@@ -15,5 +15,11 @@
     "target_path": "packages/apps/PixelLiveWallpaper",
     "branch": "ten",
     "remote": "pixel-gitlab"
+  },
+  {
+    "repository": "vendor_xiaomi_firmware",
+    "target_path": "vendor/xiaomi/firmware",
+    "branch": "ten",
+    "remote": "pixel-gitlab"
   }
 ]
