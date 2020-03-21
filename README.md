@@ -1,35 +1,24 @@
-This repository contains device configuration for Xiaomi SDM660 devices
+Device tree for Xiaomi MI 8 Lite
 
-Basic   | Spec Sheet
--------:|:----------
-CPU     | Quad-core 1.84 GHz Qualcomm Kryo 260 LP
-CPU     | Quad-core 2.20 GHz Qualcomm Kryo 260 HP
-Chipset | Qualcomm Snapdragon 660, SDM660
-GPU     | Adreno 512
-ROM     | 32/64/128GB
-RAM     | 3/4/6GB
-Android | 8.1.0
+Xiaomi MI 8 Lite was announced and released in Sep 2018.
 
-Note:
-Depends on: android_packages_resources_devicesettings from LineageOS
+## Device specifications
 
-Currently Supported Devices: wayne (MI 6X), jasmine_sprout (MI A2), clover (MI PAD 4 /4 Plus),
-lavender (Redmi Note 7) and platina (Mi 8 Lite)
-## Copyright
+| Device       | Xiaomi Mi 8 Lite                                    |
+| -----------: | :-------------------------------------------------- |
+| SoC          | Qualcomm SDM660 Snapdragon 660                      |
+| CPU          | 4x2.2 GHz Kryo 260 & 4x1.8 GHz Kryo	      	     |
+| GPU          | Adreno 512                                          |
+| Memory       | 4 GB RAM or 6 GB RAM (LPDDR4X)                      |
+| Android      | 8.1                                      	     |
+| Storage      | 128GB, 64GB emmc 5.1 flash storage  		     |
+| Battery      | Non-removable Li-Po 3350 mAh                  	     |
+| Dimensions   | 156.4 x 75.8 x 7.5 mm                               |
+| Display      | 2280 x 1080 (19:9), 6.26 inch                       |
+| Rear camera 1| 12MP, f/1.9 Dual LED flash                          |
+| Front camera | 24MP, 4 in 1, 1.8µm  		 		     |
 
-```
-#
-# Copyright (C) 2018 The LineageOS Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+## Device picture
+
+![Xiaomi Mi 8 Lite ](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543643214959&di=3b0c81b537ff2e742079764e8cf1aead&imgtype=0&src=http%3A%2F%2Fask-fd.zol-img.com.cn%2Fg5%2FM00%2F01%2F07%2FChMkJlv2fVaIcCdUAAA_3fbzsx8AAtT_wBUBrgAAD_1288.jpg)
+
