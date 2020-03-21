@@ -1240,7 +1240,6 @@
     <integer name="config_num_physical_slots">2</integer>
 
     <!-- Full screen aspect ratio -->
-    <bool name="config_haveHigherAspectRatioScreen">true</bool>
     <item name="config_screenAspectRatio" format="float" type="dimen">2.1</item>
 
     <!-- Whether device has a physical display cutout -->
