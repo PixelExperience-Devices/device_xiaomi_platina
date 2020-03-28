@@ -38,6 +38,10 @@ $(call inherit-product, vendor/xiaomi/firmware/platina/firmware.mk)
 # Device Path
 DEVICE_PATH := device/xiaomi/platina
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
 # Inherit properties
 $(call inherit-product, $(DEVICE_PATH)/props.mk)
 
