@@ -548,10 +548,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     PixelLiveWallpaperPrebuilt
 
-# Device-specific settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Vendor files
 $(call inherit-product, vendor/xiaomi/platina/platina-vendor.mk)
 
