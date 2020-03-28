@@ -114,10 +114,6 @@ TARGET_EXFAT_DRIVER := sdfat
 
 # FM
 AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
-#BOARD_HAS_QCA_FM_SOC := cherokee
-# BOARD_HAVE_QCOM_FM := true
-# BOARD_HAVE_FM_RADIO := true
-# BOARD_DISABLE_FMRADIO_LIBJNI := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
@@ -142,7 +138,7 @@ USE_DEVICE_SPECIFIC_IPACFG_MGR := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1 service_locator.enable=1 swiotlb=1 androidboot.configfs=true androidboot.usbcontroller=a800000.dwc3
-BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += loop.max_part=16
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096

@@ -1,6 +1,12 @@
 # Build FP to be picked by both system and vendor
 BUILD_FINGERPRINT := "google/coral/coral:10/QQ2A.200305.003/6156912:user/release-keys"
 
+# Adaptive Display
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.qcom.ad=1 \
+	ro.qcom.ad.calib.data=/system/etc/calib.cfg \
+	ro.qcom.ad.sensortype=2
+
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.boot-dex2oat-threads=8 \
@@ -57,7 +63,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.spkr_prot.tx.sampling_rate=48000 \
     vendor.audio.volume.headset.gain.depcal=true \
     vendor.fm.a2dp.conc.disabled=true \
-    vendor.voice.path.for.pcm.voip=true
+    vendor.voice.path.for.pcm.voip=true \
+    persist.vendor.audio.fluence.voicecall=true \
+	persist.vendor.audio.fluence.voicerec=false \
+	persist.vendor.audio.fluence.speaker=true \
+	vendor.audio.adm.buffering.ms=6 \
+	vendor.audio.offload.track.enable=false
 
 # Audio Feature
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -122,7 +133,64 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.exif.make=Xiaomi \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
-    vendor.camera.aux.packageblacklist=com.google.android.GoogleCamera,com.discord
+    vendor.camera.aux.packageblacklist=com.google.android.GoogleCamera,com.discord \
+    persist.bokeh.switch.lux=290 \
+	persist.camera.auxswitch.threshold=330 \
+	persist.camera.imglib.usefdlite=1 \
+	persist.camera.depth.focus.cb=0 \
+	persist.camera.expose.aux=1 \
+	persist.camera.isp.clock.optmz=0 \
+	persist.camera.isp.turbo=1 \
+	persist.camera.linkpreview=0 \
+	persist.camera.mainswitch.threshold=419 \
+	persist.camera.set.afd=4 \
+	persist.camera.stats.test=0 \
+	persist.flash.low.lux=390 \
+	persist.flash.light.lux=340 \
+	persist.imx376_sunny.low.lux=310 \
+	persist.imx376_sunny.light.lux=280 \
+	persist.imx376_ofilm.low.lux=310 \
+	persist.imx376_ofilm.light.lux=280 \
+	persist.sys.exif.make=Xiaomi \
+	persist.radio.VT_CAM_INTERFACE=2 \
+	ro.eyecare.brightness.threshold=3 \
+	ro.eyecare.brightness.level=8 \
+	ro.hist.brightness.threshold=5 \
+	persist.vendor.camera.multicam.hwsync=TRUE \
+	persist.vendor.camera.multicam.fpsmatch=TRUE \
+	persist.vendor.camera.enableAdvanceFeatures=0x347 \
+	persist.vendor.camera.display.umax=1920x1080 \
+	persist.vendor.camera.display.lmax=1280x720 \
+	vidc.enc.dcvs.extra-buff-count=2 \
+	persist.vendor.camera.eis.enable=0 \
+	persist.camera.eis.enable=0 \
+	persist.vendor.camera.expose.aux=1 \
+	persist.vendor.camera.preview.ubwc=0 \
+	persist.vendor.camera.stats.test=0 \
+	persist.vendor.camera.isp.clock.optmz=0 \
+	persist.vendor.camera.linkpreview=0 \
+	persist.vendor.camera.isp.turbo=1 \
+	persist.vendor.camera.awb.sync=2 \
+	persist.vendor.camera.fdvideo=1 \
+	persist.vendor.camera.mfnrframenum=8 \
+	persist.vendor.camera.multicam=TRUE \
+	persist.vendor.camera.multicam.framesync=1 \
+	persist.vendor.camera.auxswitch.threshold=330 \
+	persist.vendor.camera.mainswitch.threshold=419 \
+	persist.vendor.ov13855_sunny.low.lux=385 \
+	persist.vendor.ov13855_sunny.light.lux=370 \
+	persist.vendor.s5k3l8_ofilm.low.lux=379 \
+	persist.vendor.s5k3l8_ofilm.light.lux=367 \
+	persist.vendor.camera.stats.test=5 \
+	persist.vendor.camera.depth.focus.cb=0 \
+	persist.vendor.camera.imglib.usefdlite=1 \
+	persist.vendor.imx376_sunny.low.lux=290 \
+	persist.vendor.imx376_sunny.light.lux=275 \
+	persist.vendor.imx376_ofilm.low.lux=290 \
+	persist.vendor.imx376_ofilm.light.lux=275 \
+	persist.vendor.bokeh.switch.lux=290 \
+	persist.vendor.camera.exif.make=Xiaomi
+
 
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -156,6 +224,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.high_fps_early_phase_offset_ns=6100000 \
     debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
     debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
+
+# DPI
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=392
+    vendor.display.lcd_density=392
+
+# Dual SIM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.multisim.config=dsds
 
 # Fling
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -199,7 +276,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
     media.stagefright.enable-qcp=true \
     media.stagefright.enable-scan=true \
-		media.stagefright.thumbnail.prefer_hw_codecs=true \
+    media.stagefright.thumbnail.prefer_hw_codecs=true \
     mm.enable.qcom_parser=13631471 \
     mm.enable.smoothstreaming=true \
     mmp.enable.3g2=true \
@@ -278,7 +355,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.telephony.use_old_mnc_mcc_format=true \
     ro.vendor.use_data_netmgrd=true \
-    telephony.lteOnCdmaDevice=1
+    telephony.lteOnCdmaDevice=1 \
+    persist.vendor.iwlan.enable=true \
+    persist.vendor.radio.data_con_rprt=1
 
 # Rendering
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -328,89 +407,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
-# Adaptive Display
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.qcom.ad=1 \
-	ro.qcom.ad.calib.data=/system/etc/calib.cfg \
-	ro.qcom.ad.sensortype=2
 
-# Audio
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.vendor.audio.fluence.voicecall=true \
-	persist.vendor.audio.fluence.voicerec=false \
-	persist.vendor.audio.fluence.speaker=true \
-	vendor.audio.adm.buffering.ms=6 \
-	vendor.audio.offload.track.enable=false
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.bokeh.switch.lux=290 \
-	persist.camera.auxswitch.threshold=330 \
-	persist.camera.imglib.usefdlite=1 \
-	persist.camera.depth.focus.cb=0 \
-	persist.camera.expose.aux=1 \
-	persist.camera.isp.clock.optmz=0 \
-	persist.camera.isp.turbo=1 \
-	persist.camera.linkpreview=0 \
-	persist.camera.mainswitch.threshold=419 \
-	persist.camera.set.afd=4 \
-	persist.camera.stats.test=0 \
-	persist.flash.low.lux=390 \
-	persist.flash.light.lux=340 \
-	persist.imx376_sunny.low.lux=310 \
-	persist.imx376_sunny.light.lux=280 \
-	persist.imx376_ofilm.low.lux=310 \
-	persist.imx376_ofilm.light.lux=280 \
-	persist.sys.exif.make=Xiaomi \
-	persist.radio.VT_CAM_INTERFACE=2 \
-	ro.eyecare.brightness.threshold=3 \
-	ro.eyecare.brightness.level=8 \
-	ro.hist.brightness.threshold=5 \
-	persist.vendor.camera.multicam.hwsync=TRUE \
-	persist.vendor.camera.multicam.fpsmatch=TRUE \
-	persist.vendor.camera.enableAdvanceFeatures=0x347 \
-	persist.vendor.camera.display.umax=1920x1080 \
-	persist.vendor.camera.display.lmax=1280x720 \
-	vidc.enc.dcvs.extra-buff-count=2 \
-	persist.vendor.camera.eis.enable=0 \
-	persist.camera.eis.enable=0 \
-	persist.vendor.camera.expose.aux=1 \
-	persist.vendor.camera.preview.ubwc=0 \
-	persist.vendor.camera.stats.test=0 \
-	persist.vendor.camera.isp.clock.optmz=0 \
-	persist.vendor.camera.linkpreview=0 \
-	persist.vendor.camera.isp.turbo=1 \
-	persist.vendor.camera.awb.sync=2 \
-	persist.vendor.camera.fdvideo=1 \
-	persist.vendor.camera.mfnrframenum=8 \
-	persist.vendor.camera.multicam=TRUE \
-	persist.vendor.camera.multicam.framesync=1 \
-	persist.vendor.camera.auxswitch.threshold=330 \
-	persist.vendor.camera.mainswitch.threshold=419 \
-	persist.vendor.ov13855_sunny.low.lux=385 \
-	persist.vendor.ov13855_sunny.light.lux=370 \
-	persist.vendor.s5k3l8_ofilm.low.lux=379 \
-	persist.vendor.s5k3l8_ofilm.light.lux=367 \
-	persist.vendor.camera.stats.test=5 \
-	persist.vendor.camera.depth.focus.cb=0 \
-	persist.vendor.camera.imglib.usefdlite=1 \
-	persist.vendor.imx376_sunny.low.lux=290 \
-	persist.vendor.imx376_sunny.light.lux=275 \
-	persist.vendor.imx376_ofilm.low.lux=290 \
-	persist.vendor.imx376_ofilm.light.lux=275 \
-	persist.vendor.bokeh.switch.lux=290 \
-	persist.vendor.camera.exif.make=Xiaomi
-
-# Dual SIM
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.multisim.config=dsds
-
-# DPI
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=392
-    vendor.display.lcd_density=392
-
-# Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.iwlan.enable=true \
-    persist.vendor.radio.data_con_rprt=1
