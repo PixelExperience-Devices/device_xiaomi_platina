@@ -130,7 +130,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.latch_unsignaled=0 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.disable_backpressure= 1 \
     debug.sf.early_app_phase_offset_ns=1500000 \
@@ -283,7 +282,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Rendering
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.egl.hw=1 \
     debug.enable.sglscale=1 \
     debug.sf.disable_hwc=0 \
     debug.sf.gpu_comp_tiling=1 \
