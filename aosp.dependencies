@@ -6,7 +6,7 @@
   },
   {
     "remote":      "github",
-    "repository":  "mi8lite/vendor_xiaomi_platina-decommon",
+    "repository":  "mi8lite/android_vendor_xiaomi_platina",
     "target_path": "vendor/xiaomi/platina",
     "branch":      "master"
   },
