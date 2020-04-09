@@ -1,8 +1,8 @@
 [
   {
-    "repository":  "kernel_xiaomi_platina",
+    "repository":  "nysascape/kernel_xiaomi_platina",
     "target_path": "kernel/xiaomi/platina",
-    "branch":      "ten"
+    "branch":      "staging"
   },
   {
     "remote":      "github",
@@ -21,5 +21,10 @@
     "target_path": "vendor/xiaomi-firmware",
     "branch": "ten",
     "remote": "pixel-gitlab"
+  },
+  {
+    "repository": "arter97/arm64-gcc",
+    "target_path": "prebuilts/gcc/linux-x86/aarch64/gcc-9",
+    "branch": "ten"
   }
 ]

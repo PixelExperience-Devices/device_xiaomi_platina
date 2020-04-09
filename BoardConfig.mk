@@ -149,10 +149,9 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_VERSION := 4.4
 TARGET_KERNEL_SOURCE := kernel/xiaomi/platina
-TARGET_KERNEL_CONFIG := platina_defconfig
-
-# Enable stats logging in LMKD
-TARGET_LMKD_STATS_LOG := true
+TARGET_KERNEL_CONFIG := acrux_defconfig
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/gcc-9/bin
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
