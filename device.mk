@@ -399,6 +399,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.3-service.pixel-libperfmgr \
     android.hardware.power.stats@1.0-service.pixel
 
+PRODUCT_COPY_FILES += \
+    device/xiaomi/platina/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.jso
+
 # AOT Preload
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
@@ -416,16 +419,11 @@ PRODUCT_COPY_FILES += \
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
-    $(DEVICE_PATH)/configs/perf/whitelistedapps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/whitelistedapps.xml
+    $(DEVICE_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # QMI
 PRODUCT_PACKAGES += \
     libjson
-
-# QTI Performance
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/perf/perf-profile0.conf:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perf-profile0.conf
 
 # RCS
 PRODUCT_PACKAGES += \
