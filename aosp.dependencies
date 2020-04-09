@@ -26,5 +26,10 @@
     "repository": "arter97/arm64-gcc",
     "target_path": "prebuilts/gcc/linux-x86/aarch64/gcc-9",
     "branch": "master"
+  },
+  {
+    "repository": "mi8lite/hardware_google_pixel",
+    "target_path": "hardware/google/pixel",
+    "branch": "ten"
   }
 ]
