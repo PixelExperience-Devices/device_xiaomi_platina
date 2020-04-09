@@ -97,9 +97,6 @@ BOARD_USES_QCNE := true
 # ConfigFS
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/wake_gesture"
-
 # Display
 BOARD_USES_ADRENO := true
 TARGET_USES_HWC2 := true
