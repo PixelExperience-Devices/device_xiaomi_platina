@@ -1,6 +1,6 @@
 [
   {
-    "repository":  "nysascape/kernel_xiaomi_platina",
+    "repository":  "nysascape/kernel_xiaomi_acrux",
     "target_path": "kernel/xiaomi/platina",
     "branch":      "staging"
   },
