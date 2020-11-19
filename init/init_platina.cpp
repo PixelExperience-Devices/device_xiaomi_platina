@@ -39,7 +39,6 @@
 #include <sys/_system_properties.h>
 
 #include "vendor_init.h"
-#include "property_service.h"
 
 char const *heapstartsize;
 char const *heapgrowthlimit;
