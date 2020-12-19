@@ -92,6 +92,14 @@ vendor/lib/hw/audio.bluetooth_qti.default.so|34f7db3eb585d06d8aed480e63d5dc92a14
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|947afef6bf7a05a9a2b45022edfed06bd7c00e64
 vendor/lib/libbluetooth_audio_session_qti.so|6249ab14ad93fa2978a3ffd911e4701b9d632244
 
+# Audio Hardware
+vendor/lib/hw/audio.primary.sdm660.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib/libaudioroute_ext.so
+vendor/lib64/hw/audio.primary.sdm660.so
+vendor/lib64/libaudio_log_utils.so
+vendor/lib64/libaudioroute_ext.so
+
 # Bluetooth - from jasmine
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|57a0a575a2b1b96176fda1bcb84ea8371c4070d1
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
