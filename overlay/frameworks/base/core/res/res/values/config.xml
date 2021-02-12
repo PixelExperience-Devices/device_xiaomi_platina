@@ -456,4 +456,7 @@
 
     <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
     <integer name="config_screenRecorderMaxFramerate">60</integer>
+
+    <!-- Controls whether system buttons use all caps for text -->
+    <bool name="config_buttonTextAllCaps">false</bool>
 </resources>
