@@ -229,6 +229,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.sta_detect=true \
     ro.vendor.sensors.mot_detect=true
 
+# System Restart
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.shutdown_timeout=2
+
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
