@@ -80,7 +80,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7 \
+    ro.config.vc_call_vol_steps=6 \
     vendor.audio.adm.buffering.ms=6
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
