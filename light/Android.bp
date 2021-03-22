@@ -21,11 +21,12 @@ cc_binary {
     vintf_fragments: ["android.hardware.light@2.0-service.xiaomi_sdm660.xml"],
     srcs: ["service.cpp", "Light.cpp"],
     shared_libs: [
-        "libbase",
+        "libhardware",
         "libhidlbase",
+        "liblog",
         "libutils",
         "android.hardware.light@2.0",
     ],
     relative_install_path : "hw",
-    vendor: true,
+    proprietary: true,
 }
