@@ -285,7 +285,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc \
     fstab.qcom \
-    init.device.rc
+    init.device.rc \
+    apex_metadata.rc
 
 # IRQ
 PRODUCT_COPY_FILES += \
