@@ -387,6 +387,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Shims
+PRODUCT_PACKAGES += \
+    libshim_wfd
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \

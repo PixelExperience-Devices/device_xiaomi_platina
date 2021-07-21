@@ -84,6 +84,10 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed "libwfdaudioclient.so" "${2}"
             "${PATCHELF}" --add-needed "libwfdmediautils.so" "${2}"
             ;;
+	lib64/libwfdnative.so)
+	    "${PATCHELF}" --add-needed "libshim_wfd.so" "${2}"
+	    ;;
+
     esac
 }
 

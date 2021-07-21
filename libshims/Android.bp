@@ -1,0 +1,8 @@
+  
+// libandroid
+cc_library_shared {
+    name: "libshim_wfd",
+    srcs : [
+         "wfd_shim.cpp",
+    ],
+}
