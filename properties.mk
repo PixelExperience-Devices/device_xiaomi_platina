@@ -213,7 +213,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WFD
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.debug.wfd.enable=0
+    persist.debug.wfd.enable=1
 
 # Set lmkd options
 PRODUCT_PRODUCT_PROPERTIES += \
