@@ -1,11 +1,5 @@
 [
   {
-    "remote":      "github",
-    "repository":  "PixelExperience-Devices/device_xiaomi_platina",
-    "target_path": "device/xiaomi/platina",
-    "branch":      "eleven"
-  },
-  {
     "repository"  : "vendor_xiaomi_platina",    
     "target_path" : "vendor/xiaomi/platina",
     "branch"      : "eleven",
@@ -13,8 +7,8 @@
   },
   {
     "remote":      "github",
-    "repository" : "LineageOS/android_kernel_xiaomi_sdm660",
+    "repository" : "PixelExperience-Devices/kernel_xiaomi_platina",
     "target_path": "kernel/xiaomi/platina",
-    "branch"     : "lineage-18.1"
+    "branch"     : "eleven"
   }
 ]
