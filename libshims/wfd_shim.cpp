@@ -16,4 +16,5 @@
 
 extern "C" {
   void _ZN7android8KeyEvent10initializeEiiiiiiiiill() {}
+  void _ZN7android11MotionEvent10initializeEiiiiiiiiiNS_20MotionClassificationEffffllmPKNS_17PointerPropertiesEPKNS_13PointerCoordsE(){}
 }
