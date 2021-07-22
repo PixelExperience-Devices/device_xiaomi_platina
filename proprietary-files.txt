@@ -92,13 +92,21 @@ vendor/lib/hw/audio.bluetooth_qti.default.so
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
 vendor/lib/libbluetooth_audio_session_qti.so
 
-# Audio Hardware
+# Audio Hardware - from platina
 vendor/lib/hw/audio.primary.sdm660.so
+vendor/lib/liba2dpoffload.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioroute_ext.so
+vendor/lib/libhdmiedid.so
+vendor/lib/libhfp.so
+vendor/lib/libsndmonitor.so
 vendor/lib64/hw/audio.primary.sdm660.so
+vendor/lib64/liba2dpoffload.so
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioroute_ext.so
+vendor/lib64/libhdmiedid.so
+vendor/lib64/libhfp.so
+vendor/lib64/libsndmonitor.so
 
 # Bluetooth - from jasmine
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|57a0a575a2b1b96176fda1bcb84ea8371c4070d1
