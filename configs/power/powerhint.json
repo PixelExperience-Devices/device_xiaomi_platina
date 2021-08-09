@@ -289,6 +289,18 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "647000000"
+    },
+    {
+      " PowerHint " : " Flipendo " ,
+      " Nó " : " CPULittleClusterMaxFreq " ,
+      " Duração " : 0 ,
+      " Valor " : " 1401600 "
+    },
+    {
+      " PowerHint " : " Flipendo " ,
+      " Nó " : " CPUBigClusterMaxFreq " ,
+      " Duração " : 0 ,
+      " Valor " : " 1747200 "
     }
   ]
 }
