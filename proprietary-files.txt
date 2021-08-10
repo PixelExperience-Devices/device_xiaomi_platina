@@ -1218,10 +1218,17 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|a0d692fe10ef9dc447949
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|e47baed52f1c0637de34fa55e45a86b4b412a672
 
-# Widevine - from jasmine
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
-vendor/lib64/libwvhidl.so|0466cd3b2a7b93efd23945e2637430513472ad7c
+# DRM-Widevine - from phoenix_sprout - RKQ1.201123.002
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|7c65a818f9c3d00051698e2a51425058083d69c4
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
+vendor/lib64/libcpion.so|0a6999ca33dea3bed4301106fc225f9b11b9f289
+vendor/lib64/liboemcrypto.so|c813d9e8798c6602656e124bf71b078ff6be55bd
+vendor/lib64/libwvhidl.so|6a391723bb40d8d7ee09012fe9c31f0122e4a84f
+
+# DRM-Widevine-HDCP - from phoenix_sprout - RKQ1.201123.002
+vendor/lib64/libhdcpsrm.so|affdc2195766c34226510dd422fbf22f689b25b2
+vendor/lib64/libmm-hdcpmgr.so|99cf7e11c8e08ddb92deb8fbd514cf874bedaf63
 
 # WiFi Display - from phoenix_sprout 11 RKQ1.201123.002
 bin/wfdservice|cb053924304edda5bf4f9e3ddbbb7983e30513e9
