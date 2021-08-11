@@ -932,6 +932,12 @@ vendor/lib64/libthermalioctl.so|fffea94641d279737b7c16ca7b53a423c972ba80
 # Wifi - from platina
 vendor/bin/cnss-daemon|58c92bfa55ac6cf13b231300cb60c1b0fdc947ae
 
+# Hotword enrollment - from phoenix_sprout - RKQ1.201123.002
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk:system_ext/priv-app/HotwordEnrollmentOKGoogleHEXAGON/HotwordEnrollmentOKGoogleHEXAGON.apk|ff5b936acb63a78d4a62643d38ef4f9074a00a8e;PRESIGNED
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk:system_ext/priv-app/HotwordEnrollmentXGoogleHEXAGON/HotwordEnrollmentXGoogleHEXAGON.apk|4b710f4dab6eef900d337185675c6cdfc95eab0b;PRESIGNED
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|563a58554d9c0dd0608552b644fbf74519a447bb
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|0492cd3db2e253e23b78e56fa8ea7b3a4b15edeb
+
 # Keymaster - from jasmine
 vendor/lib/libkeymasterdeviceutils.so|bc2aac023d99ec9e423d2f769019d187c99a8afb
 vendor/lib/libkeymasterprovision.so|ae6bbb9fec083307336b6191194d5c48b5dfd3a5
