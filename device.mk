@@ -154,8 +154,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GoogleCamera
 
-PRODUCT_COPY_FILES +=  $(DEVICE_PATH)/GoogleCamera/com.google.android.GoogleCameraEng.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.GoogleCameraEng.xml
-
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.5:64 \
     android.hardware.camera.provider@2.6:64 \

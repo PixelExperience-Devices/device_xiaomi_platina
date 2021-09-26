@@ -1,0 +1,25 @@
+android_app_import {
+    name: "GoogleCamera",
+    apk: "product/priv-app/GoogleCamera/GoogleCamera.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    privileged: true,
+    required: ["com.google.android.GoogleCameraEng"],
+    overrides: [
+        "SnapdragonCamera",
+        "Snap",
+        "Camera2",
+        "Camera",
+    ],
+    product_specific: true,
+}
+
+prebuilt_etc {
+    name: "com.google.android.GoogleCameraEng",
+    sub_dir: "permissions",
+    src: "product/etc/permissions/com.google.android.GoogleCameraEng.xml",
+    filename_from_src: true,
+    product_specific: true,
+}
