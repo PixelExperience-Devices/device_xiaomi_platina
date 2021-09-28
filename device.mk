@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Firmware
+$(call inherit-product, vendor/xiaomi-firmware/platina/firmware.mk)
+
 DEVICE_PATH := device/xiaomi/platina
 
 # Setup dalvik vm configs
