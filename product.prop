@@ -10,5 +10,5 @@ ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
 
-# IORap app launch prefetching using Perfetto traces and madvise
-ro.iorapd.enable=true
+# IORap
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
