@@ -29,5 +29,8 @@ genfscon sysfs /devices/virtual/graphics/fb2                    u:object_r:sysfs
 genfscon sysfs /devices/platform/soc/soc:qcom,gpubw             u:object_r:sysfs_devfreq:s0
 genfscon sysfs /devices/platform/soc/soc:qcom,cpubw             u:object_r:sysfs_devfreq:s0
 
+genfscon sysfs /power/rpmh_stats/master_stats         u:object_r:sysfs_rpm:s0
+genfscon sysfs /power/system_sleep/stats              u:object_r:sysfs_system_sleep_stats:s0
+
 # Touchpanel
 genfscon sysfs /touchpanel                                      u:object_r:sysfs_touchpanel:s0
