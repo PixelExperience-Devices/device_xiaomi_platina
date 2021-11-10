@@ -10,6 +10,9 @@ persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
 ro.bluetooth.library_name=libbluetooth_qti.so
 vendor.bluetooth.soc=cherokee
 
+# Blur
+ro.surface_flinger.supports_background_blur=0
+
 # CNE
 persist.vendor.cne.feature=1
 
