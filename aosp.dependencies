@@ -2,14 +2,14 @@
   {
     "repository"  : "vendor_xiaomi_platina",    
     "target_path" : "vendor/xiaomi/platina",
-    "branch"      : "eleven",
+    "branch"      : "eleven-wip",
     "remote"      : "pixel-devices-blobs"
   },
   {
     "remote":      "github",
     "repository" : "PixelExperience-Devices/kernel_xiaomi_platina",
     "target_path": "kernel/xiaomi/platina",
-    "branch"     : "eleven"
+    "branch"     : "eleven-wip"
   },
   {
     "repository": "vendor_xiaomi-firmware",
