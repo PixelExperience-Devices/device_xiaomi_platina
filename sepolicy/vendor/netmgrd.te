@@ -1,0 +1,1 @@
+allow netmgrd radio_control_prop:file read ;
