@@ -12,3 +12,6 @@ ro.zram.periodic_wb_delay_hours=24
 
 # IORap
 persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+
+# Graphics
+debug.hwui.renderer=skiavk
