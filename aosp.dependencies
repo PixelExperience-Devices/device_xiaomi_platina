@@ -1,0 +1,26 @@
+[
+  {
+    "repository"  : "vendor_xiaomi_platina",    
+    "target_path" : "vendor/xiaomi/platina",
+    "branch"      : "twelve",
+    "remote"      : "pixel-devices-blobs"
+  },
+  {
+    "remote":      "github",
+    "repository" : "PixelExperience-Devices/kernel_xiaomi_platina",
+    "target_path": "kernel/xiaomi/platina",
+    "branch"     : "twelve"
+  },
+  {
+    "repository": "vendor_xiaomi-firmware",
+    "target_path": "vendor/xiaomi-firmware",
+    "branch":"twelve",
+    "remote":"pixel-devices-blobs"
+  },
+  {
+    "remote":      "github",
+    "repository" : "Allansouzadk/vendor_xiaomi_sdm660-common-extra",
+    "target_path": "vendor/xiaomi/sdm660-common-extra",
+    "branch"     : "twelve"
+  }
+]
