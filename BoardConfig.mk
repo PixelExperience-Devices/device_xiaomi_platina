@@ -60,5 +60,9 @@ VENDOR_SECURITY_PATCH := 2020-08-01
 # SELinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_platina
+TARGET_RECOVERY_DEVICE_MODULES := libinit_platina
+
 # Inherit the proprietary files
 include vendor/xiaomi/platina/BoardConfigVendor.mk
