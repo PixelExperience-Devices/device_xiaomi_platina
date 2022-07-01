@@ -9,6 +9,7 @@ $(call inherit-product, vendor/xiaomi-firmware/platina/firmware.mk)
 
 # Apex
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 DEVICE_PATH := device/xiaomi/platina
 
