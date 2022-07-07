@@ -18,12 +18,6 @@
     "remote":"pixel-devices-blobs"
   },
   {
-    "remote":      "github",
-    "repository" : "Allansouzadk/vendor_xiaomi_sdm660-common-extra",
-    "target_path": "vendor/xiaomi/sdm660-common-extra",
-    "branch"     : "twelve"
-  },
-  {
     "repository": "jjpprrrr/prelude-clang",
     "target_path": "prebuilts/clang/host/linux-x86/clang-prelude",
     "branch": "master",
