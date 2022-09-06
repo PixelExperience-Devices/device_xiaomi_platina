@@ -18,4 +18,12 @@ export DEVICE=platina
 export DEVICE_COMMON=sdm660-common
 export VENDOR=xiaomi
 
+function blob_fixup() {
+    case "${1}" in
+        vendor/lib/libMiCameraHal.so)
+            ${PATCHELF} --add-needed "libpiex-v29.so" "${2}"
+            ;;
+    esac
+}
+
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
