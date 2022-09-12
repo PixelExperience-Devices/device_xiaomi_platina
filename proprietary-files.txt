@@ -36,7 +36,7 @@ vendor/lib64/libsndmonitor.so
 # Camera
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libMegviiFacepp-0.5.2.so
-vendor/lib/libMiCameraHal.so
+vendor/lib/libMiCameraHal.so|053f62a68e2936df67def5e0e7318f8b343142e5
 vendor/lib/libSNPE.so
 vendor/lib/libVDClearShot.so
 vendor/lib/libVDSuperPhotoAPI.so
