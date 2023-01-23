@@ -9,7 +9,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.isp.clock.optmz=0 \
     persist.vendor.camera.isp.turbo=1 \
     persist.vendor.camera.linkpreview=0 \
-    persist.vendor.camera.preview.ubwc=0 \
     persist.vendor.camera.stats.test=0 \
     persist.vendor.imx376_ofilm.light.lux=275 \
     persist.vendor.imx376_ofilm.low.lux=290 \

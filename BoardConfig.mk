@@ -41,6 +41,7 @@ BUILD_BROKEN_DUP_RULES := true
 TARGET_SCREEN_DENSITY := 440
 
 # Kernel
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 TARGET_KERNEL_CONFIG := platina_defconfig
 
 # Manifest
