@@ -43,6 +43,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
     $(DEVICE_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
 
+# Camera
+PRODUCT_PACKAGES += \
+    Aperture
+
 # Consumerir
 BOARD_HAVE_IR := false
 
@@ -66,14 +70,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0 \
     android.hardware.gatekeeper@1.0.vendor
-
-# Google camera
-PRODUCT_PACKAGES += \
-    GoogleCameraGo
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/GoogleCameraGo/permissions/com.google.android.GoogleCameraGo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/com.google.android.GoogleCameraGo.xml \
-    $(LOCAL_PATH)/GoogleCameraGo/configs/hiddenapi-package-whitelist-GoogleCameraGo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hiddenapi-package-whitelist-GoogleCameraGo.xml
 
 # Keymaster
 PRODUCT_PACKAGES += \
